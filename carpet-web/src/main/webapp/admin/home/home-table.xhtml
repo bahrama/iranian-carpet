@@ -1,0 +1,60 @@
+<ui:composition template="../../WEB-INF/pages/admin-temp.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="main-head">
+        <h:outputStylesheet>
+
+        </h:outputStylesheet>
+    </ui:define>
+    <!---->
+
+    <ui:define name="main-body">
+        <div class="ui-g-12 ui-md-10 ui-g-nopad">
+
+            <div class="ui-g-12">
+                HOME TABLE
+            </div>
+            <h:form id="frm" prependId="false" enctype="multipart/form-data">
+                <p:growl id="growl" showDetail="true" />
+                <div class="ui-g-12 ui-g-nopad">
+                    <!---->
+                    <div class="ui-g-12 ui-md-12">
+                        <div class="field">
+                            <p:dataTable id="eventsDT"
+                                         var="home"
+                                         value="#{homeManageBeanView.lazyHomeDataModel}"
+                                         selectionMode="single"
+                                         selection="#{homeManageBeanView.homeDto}"
+                                         rowKey="#{home.id}"
+                                         paginator="true"
+                                         rows="5"
+                                         selectionPageOnly="false"
+                                         paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                                         rowsPerPageTemplate="5,10,15"
+                                         lazy="true">
+                                <p:ajax event="rowSelect" listener="#{homeManageBeanView.onRowSelect}" update="growl"/>
+                                <p:ajax event="rowUnselect" listener="#{homeManageBeanView.onRowUnselect}" update="growl"/>
+                                <p:column headerText="id" sortBy="#{home.id}" filterBy="#{home.id}">
+                                    <h:outputText value="#{home.id}" />
+                                </p:column>
+
+                                <p:column headerText="title" sortBy="#{home.title}" filterBy="#{home.title}">
+                                    <h:outputText value="#{home.title}" />
+                                </p:column>
+                                <p:column headerText="homeType" sortBy="#{home.homeType}" filterBy="#{home.homeType}">
+                                    <h:outputText value="#{home.homeType}" />
+                                </p:column>
+                            </p:dataTable>
+                        </div>
+                    </div>
+                    <!---->
+                </div>
+            </h:form>
+        </div>
+
+    </ui:define>
+</ui:composition>

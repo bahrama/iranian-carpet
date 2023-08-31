@@ -1,0 +1,86 @@
+<ui:composition template="../WEB-INF/pages/main-temp.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="main-head"></ui:define>
+    <ui:define name="main-body">
+        <!-- Breadcrumb area Start -->
+        <div class="breadcrumb-area bg-color" data-bg-color="#f6f6f6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
+                            <h1 class="page-title">Contact Us</h1>
+                            <ul class="breadcrumb">
+                                <li>
+                                    <h:link outcome="/pages/home.xhtml">
+                                    Home
+                                    </h:link>
+                                </li>
+                                <li class="current"><span>Contact Us</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb area End -->
+        <!-- Main Content Wrapper Start -->
+        <div id="content" class="main-content-wrapper">
+            <div class="page-content-inner pt--75">
+                <div class="container">
+                    <div class="row pb--80">
+                        <div class="col-md-7 mb-sm--30">
+                            <h2 class="heading__secondary mb--50 mb-md--35 mb-sm--20">Get in touch</h2>
+
+                            <!-- Contact form Start Here -->
+                            <form class="form" action="mail.php" id="contact-form">
+                                <div class="form__group mb--20">
+                                    <input type="text" id="contact_name" name="contact_name" class="form__input form__input--2" placeholder="Your name*"/>
+                                </div>
+                                <div class="form__group mb--20">
+                                    <input type="email" id="contact_email" name="contact_email" class="form__input form__input--2" placeholder="Email Address*"/>
+                                </div>
+                                <div class="form__group mb--20">
+                                    <input type="text" id="contact_phone" name="contact_phone" class="form__input form__input--2" placeholder="Your Phone*"/>
+                                </div>
+                                <div class="form__group mb--20">
+                                    <textarea class="form__input form__input--textarea" id="contact_message" name="contact_message" placeholder="Message*"></textarea>
+                                </div>
+                                <div class="form__group">
+                                    <button type="submut" class="btn-submit">Send Now</button>
+                                </div>
+                                <div class="form__output"></div>
+                            </form>
+                            <!-- Contact form end Here -->
+
+                        </div>
+                        <div class="col-md-5 pl--50 pl-sm--30">
+                            <h2 class="heading__secondary mb--50">Contact info</h2>
+
+                            <div class="contact-info-widget mb--45">
+                                <div class="contact-info">
+                                    <h3 class="heading__tertiary">Postal Address</h3>
+                                    <p>Tehran , Dubai</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-widget two-column-list sm-one-column mb--45">
+                                <div class="contact-info mb-sm--35">
+                                    <h3 class="heading__tertiary">Business Phone</h3>
+                                    <a href="">009809028882203</a>
+                                </div>
+                                <div class="contact-info">
+                                    <h3 class="heading__tertiary">Email</h3>
+                                    <a href="mailto:info@la-studioweb.com">alialikhahasl@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

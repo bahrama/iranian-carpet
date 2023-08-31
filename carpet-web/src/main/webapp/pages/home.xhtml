@@ -1,0 +1,136 @@
+<ui:composition template="../WEB-INF/pages/main-temp.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="main-head"></ui:define>
+    <ui:define name="main-body">
+        <div class="main-content-wrapper">
+            <section class="homepage-slider-wrapper mb--100">
+                <div class="zakas-element-carousel homepage-slider nav-vertical-center nav-space-100"
+                     data-slick-options='{
+                    "arrows": true,
+                    "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-double-left" },
+                    "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-double-right" }
+                }'>
+            <ui:repeat value="#{homePageManageBeanView.findAllSlider()}" var="slide">
+                    <div class="item">
+                        <div class="single-slide slider-height-3 bg-style d-flex align-items-center" style="background-image: url(http://localhost:8082/Images/#{slide.pic}.jpg);">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="slider-content">
+                                            <h1 class="heading__primary heading__primary--2 color--white mb--30">
+                                                <span class="heading__primary--sub" data-animation="fadeInUp" data-duration=".4s" data-delay=".7s">#{slide.title}</span>
+                                                <span class="heading__primary--main" data-animation="fadeInUp" data-duration=".4s" data-delay="1s">#{slide.title2}</span>
+                                            </h1>
+                                            <a href="#{slide.link}" class="btn" data-animation="fadeInUp" data-duration=".4s" data-delay="1.2s">#{slide.title} <i class="fa fa-angle-double-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </ui:repeat>
+                </div>
+            </section>
+            <div class="banner-area mb--45">
+                <div class="container-fluid">
+                    <div class="row gutter-50 gutter-md-40">
+                        <ui:repeat value="#{homePageManageBeanView.findAllComm()}" var="comm">
+                        <div class="col-md-6 mb--50">
+                            <div class="banner-box">
+                                <div class="banner-inner banner-hover-2 banner-info-over-img banner-info-left-top">
+                                    <figure class="banner-image">
+                                        <h:graphicImage
+                                                        rendered="#{comm.pic ne null}"
+                                                        value="http://localhost:8082/Images/#{comm.pic}.jpg"/>
+                                    </figure>
+                                    <div class="banner-info">
+                                        <div class="banner-info--inner pl--50 pt--150">
+                                            <p class="banner-paragraph-1 color--white">#{comm.title}</p>
+                                            <p class="banner-title-2 color--white font-weight-light mb--0">#{comm.title2}</p>
+                                            <a href="shop.html" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <a href="shop.html" class="banner-link"></a>
+                                </div>
+                            </div>
+                        </div>
+                        </ui:repeat>
+                    </div>
+                </div>
+            </div>
+            <!-- Banner Area End -->
+
+            <!-- Product tab area Start -->
+            <section class="product-tab-area mb--95">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="product-tab tab-style-2">
+                                <div class="tab-content" id="new-arrival-tab-content">
+                                    <div class="tab-pane fade show active" id="nav-new" role="tabpanel" aria-labelledby="nav-new-tab">
+                                        <div class="zakas-element-carousel nav-right-center custom-center" data-slick-options='{
+                                            "spaceBetween": 30,
+                                            "slidesToShow": 4,
+                                            "slidesToScroll": 1,
+                                            "arrows": true,
+                                            "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-double-left" },
+                                            "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-double-right" }
+                                        }'
+                                             data-slick-responsive= '[
+                                            {"breakpoint":1199, "settings": {
+                                                "slidesToShow": 3
+                                            }},
+                                            {"breakpoint":991, "settings": {
+                                                "slidesToShow": 2
+                                            }},
+                                            {"breakpoint":575, "settings": {
+                                                "slidesToShow": 1
+                                            }}
+                                        ]'>
+                                            <ui:repeat value="#{homePageManageBeanView.lastSixProduct()}" var="product">
+                                            <div class="item">
+                                                <div class="zakas-product">
+                                                    <div class="product-inner">
+                                                        <figure class="product-image">
+                                                            <h:link outcome="/pages/product-detail.xhtml">
+                                                                <h:graphicImage
+                                                                        rendered="#{product.pic1 ne null}"
+                                                                        value="http://localhost:8082/Images/#{product.pic1}.jpg"/>
+                                                                <f:param name="code" value="#{product.code}" />
+                                                            </h:link>
+                                                            <span class="product-badge">New</span>
+                                                        </figure>
+                                                        <div class="product-info">
+                                                            <h3 class="product-title mb--15">
+                                                                <h:link outcome="/pages/product-detail.xhtml">
+                                                                    #{product.name}
+                                                                    <f:param name="code" value="#{product.code}" />
+                                                                </h:link>
+                                                            </h3>
+                                                            <div class="product-price-wrapper mb--30">
+                                                                <span class="money">$80</span>
+                                                            </div>
+                                                            <a href="cart.html" class="btn btn-small btn-bg-sand btn-color-dark">Order</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </ui:repeat>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Product tab area End -->
+
+        </div>
+        <!-- Main Content Wrapper End -->
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,344 @@
+<ui:composition template="../../WEB-INF/pages/admin-temp.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam name="productId" />
+        </f:metadata>
+    </ui:define>
+    <ui:define name="main-head">
+        <h:outputStylesheet>
+            .w100{
+                width: 100%;
+            }
+        </h:outputStylesheet>
+    </ui:define>
+    <!---->
+
+    <ui:define name="main-body">
+        <div class="ui-g-12 ui-md-10 ui-g-nopad">
+
+            <div class="ui-g-12">
+              ADD PRODUCT <br/>
+                PRODUCT : <h:outputText
+                    rendered="#{productManageBeanView.findProductById(productId) ne null}"
+                    value="#{productManageBeanView.productDto.name}"/>
+
+            </div>
+            <h:form id="frm" prependId="false" enctype="multipart/form-data">
+                <p:growl id="growl" showDetail="true" />
+            <div class="ui-g-12 ui-g-nopad">
+<!---->
+                <div class="ui-g-12 ui-md-6">
+                                <div class="field">
+                    <span class="ui-float-label">
+                        <p:inputText id="nme" value="#{productManageBeanView.productDto.name}" styleClass="w100">
+                            <f:validateLength minimum="2" maximum="200"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="Name" />
+                    </span>
+                                </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                        <p:inputText value="#{productManageBeanView.productDto.title}" styleClass="w100">
+                            <f:validateLength minimum="2" maximum="1000"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="Title" />
+                    </span>
+                    </div>
+                </div>
+<!---->
+                <div class="ui-g-12 ui-md-6">
+                                <div class="field">
+                    <span class="ui-float-label">
+                        <p:inputText value="#{productManageBeanView.productDto.link1}" styleClass="w100">
+                            <f:validateLength minimum="2" maximum="1000"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="link1" />
+                    </span>
+                                </div>
+                </div>
+                <!---->
+                <div class="ui-g-12 ui-md-6">
+                                <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.link2}">
+                             <f:validateLength minimum="2" maximum="1000"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="link2" />
+                    </span>
+                                </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.color}">
+                             <f:validateLength minimum="2" maximum="300"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="color" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.size}">
+                             <f:validateLength minimum="2" maximum="300"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="size" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.h1Title}">
+                             <f:validateLength minimum="2" maximum="300"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="h1Title" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.altPic1}">
+                             <f:validateLength minimum="2" maximum="300"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="altPic1" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.altPic2}">
+                             <f:validateLength minimum="2" maximum="300"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="altPic2" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.altPic3}">
+                             <f:validateLength minimum="2" maximum="300"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="altPic3" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.altPic4}">
+                             <f:validateLength minimum="2" maximum="300"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="altPic4" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.altPic5}">
+                             <f:validateLength minimum="2" maximum="300"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="altPic5" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.link3}">
+                             <f:validateLength minimum="2" maximum="1000"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="link3" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.link4}">
+                             <f:validateLength minimum="2" maximum="1000"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="link4" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.link5}">
+                             <f:validateLength minimum="2" maximum="1000"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="link5" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.metaDescription}">
+                             <f:validateLength minimum="2" maximum="300"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="metaDescription" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                         <p:inputText styleClass="w100" value="#{productManageBeanView.productDto.metaKeywords}">
+                             <f:validateLength minimum="2" maximum="300"/>
+                        </p:inputText>
+                        <p:outputLabel for="@previous" value="metaKeywords" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                <div class="field">
+                    <span class="ui-float-label">
+                       <p:inputNumber required="true" styleClass="w100" value="#{productManageBeanView.productDto.price}" />
+                       <p:outputLabel for="@previous" value="price" />
+                    </span>
+                </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <div class="field">
+                    <span class="ui-float-label">
+                       <p:inputNumber required="true" styleClass="w100" value="#{productManageBeanView.productDto.metric}" />
+                       <p:outputLabel for="@previous" value="metric" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                <div class="field">
+                    <span class="ui-float-label">
+                       <p:datePicker required="true" requiredMessage="date is required" styleClass="w100" value="#{productManageBeanView.productDto.productDate}" />
+                       <p:outputLabel for="@previous" value="productDate" />
+                    </span>
+                </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                <div class="field">
+                <p:selectOneMenu value="#{productManageBeanView.productDto.productType}" dynamic="true">
+                    <f:selectItems itemValue="#{pitem}" itemLabel="#{pitem}"
+                                   var="pitem" value="#{productManageBeanView.productTypes()}"/>
+                </p:selectOneMenu>
+                </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <div class="field">
+                        <p:selectOneMenu value="#{productManageBeanView.productDto.subProductType}" dynamic="true">
+                            <f:selectItems itemValue="#{pitem}" itemLabel="#{pitem}"
+                                           var="pitem" value="#{productManageBeanView.subProductTypes()}"/>
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-12">
+                                <div class="field">
+                    <span class="ui-float-label">
+                        <p:inputTextarea value="#{productManageBeanView.productDto.description}" rows="3" cols="30" styleClass="w100">
+                             <f:validateLength minimum="2"/>
+                        </p:inputTextarea>
+                       <p:outputLabel for="@previous" value="Textarea" />
+                    </span>
+                                </div>
+                </div>
+                <div class="ui-g-12 ui-md-12">
+                    <div class="field">
+                    <span class="ui-float-label">
+                        <p:inputTextarea value="#{productManageBeanView.productDto.littleDesc}" rows="3" cols="30" styleClass="w100">
+                             <f:validateLength minimum="2"/>
+                        </p:inputTextarea>
+                       <p:outputLabel for="@previous" value="littleDesc" />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <div class="field">
+                    <span class="ui-float-label">
+                        <h:graphicImage style="max-width:100%; height:300px!important"
+                                        rendered="#{productManageBeanView.productDto.pic1 ne null}"
+                                        value="http://localhost:8082/Images/#{productManageBeanView.productDto.pic1}.jpg"/>
+                        <p:fileUpload value="#{productManageBeanView.pic1}" mode="simple"
+                                      skinSimple="true"
+                                      validateContentType="true" accept=".jpg,.jpeg"
+                        />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <div class="field">
+                    <span class="ui-float-label">
+                                                <h:graphicImage style="max-width:100%; height:300px!important"
+                                                                rendered="#{productManageBeanView.productDto.pic2 ne null}"
+                                                                value="http://localhost:8082/Images/#{productManageBeanView.productDto.pic2}.jpg"/>
+                         <p:fileUpload value="#{productManageBeanView.pic2}" mode="simple"
+                                       skinSimple="true"
+                                       validateContentType="true" accept=".jpg,.jpeg"
+                         />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <div class="field">
+                    <span class="ui-float-label">
+                                                <h:graphicImage style="max-width:100%; height:300px!important"
+                                                                rendered="#{productManageBeanView.productDto.pic3 ne null}"
+                                                                value="http://localhost:8082/Images/#{productManageBeanView.productDto.pic3}.jpg"/>
+                         <p:fileUpload value="#{productManageBeanView.pic3}" mode="simple"
+                                       skinSimple="true"
+                                       validateContentType="true" accept=".jpg,.jpeg"
+                         />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                                                <h:graphicImage style="max-width:100%; height:300px!important"
+                                                                rendered="#{productManageBeanView.productDto.pic4 ne null}"
+                                                                value="http://localhost:8082/Images/#{productManageBeanView.productDto.pic4}.jpg"/>
+                         <p:fileUpload value="#{productManageBeanView.pic4}" mode="simple"
+                                       skinSimple="true"
+                                       accept=".jpg,.jpeg"
+                         />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <div class="field">
+                    <span class="ui-float-label">
+                                                <h:graphicImage style="max-width:100%; height:300px!important"
+                                                                rendered="#{productManageBeanView.productDto.pic5 ne null}"
+                                                                value="http://localhost:8082/Images/#{productManageBeanView.productDto.pic5}.jpg"/>
+                         <p:fileUpload value="#{productManageBeanView.pic5}" mode="simple"
+                                       skinSimple="true"
+                                       validateContentType="true" accept=".jpg,.jpeg"
+                         />
+                    </span>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-12">
+                <p:commandButton value="Save" update="growl msg1"
+                                 validateClient="true"
+                                 style="background: crimson;"
+                                 action="#{productManageBeanView.save()}"
+                                 ajax="false" />
+                </div>
+                </div>
+            </h:form>
+            </div>
+
+    </ui:define>
+</ui:composition>

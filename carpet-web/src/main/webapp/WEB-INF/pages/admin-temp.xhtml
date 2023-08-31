@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <h:outputStylesheet>
+        .ui-g div {
+            background-color: #ededed;
+            text-align: center;
+            border: 1px solid #fafafa;
+        }
+        .hdr{
+            margin-bottom: 20px;
+            height: 50px;
+        }
+    </h:outputStylesheet>
+    <ui:insert name="main-head"/>
+</h:head>
+<h:body>
+<f:view>
+    <p:outputPanel>
+    <div class="card">
+    <div class="ui-g">
+        <div class="ui-g-12 hdr">
+            header
+        </div>
+        <div class="ui-g-12 ui-md-2">
+            <p:slideMenu style="width:100%;" >
+                <p:submenu label="PRODUCT">
+                    <p:menuitem value="ADD" outcome="/admin/product/product.xhtml"/>
+                    <p:menuitem value="TABLE" outcome="/admin/product/product-table.xhtml"/>
+                </p:submenu>
+                <p:submenu label="HOME">
+                    <p:menuitem value="ADD" outcome="/admin/home/home.xhtml"/>
+                    <p:menuitem value="TABLE" outcome="/admin/home/home-table.xhtml"/>
+                </p:submenu>
+            </p:slideMenu>
+        </div>
+        <ui:insert name="main-body"/>
+        <div class="ui-g-12">
+            Footer
+        </div>
+    </div>
+    </div>
+    </p:outputPanel>
+</f:view>
+</h:body>
+</html>

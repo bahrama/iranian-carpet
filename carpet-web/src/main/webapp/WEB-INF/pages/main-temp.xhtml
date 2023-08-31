@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <h:outputStylesheet>
+        .imgclz{
+            max-width: 160px!important;
+            border-radius: 10px;
+            border: 1px solid #BFBFBF;
+            box-shadow: 10px 10px 5px #aaaaaa;
+        }
+    </h:outputStylesheet>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <h:outputStylesheet name="css/vendor.css" library="assets"/>
+    <h:outputStylesheet name="css/main.css" library="assets"/>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="assets/img/icon.png"/>
+    <link rel="stylesheet" href="../../resources/fonts.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+    <ui:insert name="main-head"/>
+</h:head>
+<h:body>
+<f:view encoding="UTF-8">
+
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-topbar">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-5 text-center text-lg-left">
+                            <p class="font-weight-light">Crafting Wonders, Woven in Iran's Heart</p>
+                        </div>
+                        <div class="col-md-7 text-center text-lg-right">
+                            <ul class="header-contact-list list-inline">
+                                <li class="list-inline-item"><i class="fa fa-phone"></i><span>+98 9028882203</span></li>
+                                <li class="list-inline-item"><i class="fa fa-envelope"></i><a href="alialikhahasl@gmail.com">alialikhahasl@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-inner fixed-header" style="background-color: rgb(245,212,230);">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-10 col-lg-9 col-3">
+                            <nav class="main-navigation">
+                                <div class="site-branding">
+                                    <a href="index.html" class="logo">
+                                        <figure class="logo--transparent">
+                                            <h:graphicImage styleClass="imgclz" library="images" name="brand.png"/>
+                                        </figure>
+                                        <figure class="logo--normal">
+                                            <h:graphicImage styleClass="imgclz" library="images" name="brand.png"/>
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div class="mainmenu-nav d-none d-lg-block">
+                                    <ul class="mainmenu">
+                                        <li class="mainmenu__item menu-item-has-children active">
+                                            <h:link outcome="/pages/home.xhtml" styleClass="mainmenu__link">
+                                                <span class="mm-text">Home</span>
+                                            </h:link>
+                                        </li>
+                                        <li class="mainmenu__item menu-item-has-children">
+                                            <h:link styleClass="mainmenu__link" outcome="/pages/product-list.xhtml">
+                                                <span class="mm-text">Shop</span>
+                                                <f:param name="page" value="1" />
+                                            </h:link>
+                                            <ul class="megamenu">
+                                                <li>
+                                                    <h:link styleClass="megamenu-title" outcome="/pages/product-list.xhtml">
+                                                        <span class="mm-text">Carpet</span>
+                                                        <f:param name="productType" value="CARPET" />
+                                                        <f:param name="page" value="1" />
+                                                    </h:link>
+                                                    <ul>
+                                                        <li>
+                                                            <h:link outcome="/pages/product-list.xhtml">
+                                                                <span class="mm-text">Bijar</span>
+                                                                <f:param name="productType" value="CARPET" />
+                                                                <f:param name="subProductType" value="Bijar" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                        <li>
+                                                            <h:link outcome="/pages/product-list.xhtml">
+                                                                <span class="mm-text">Tabriz</span>
+                                                                <f:param name="productType" value="CARPET" />
+                                                                <f:param name="subProductType" value="Tabriz" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                        <li>
+                                                            <h:link outcome="/pages/product-list.xhtml">
+                                                                <span class="mm-text">Zanjan</span>
+                                                                <f:param name="productType" value="CARPET" />
+                                                                <f:param name="subProductType" value="Zanjan" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                        <li>
+                                                            <h:link outcome="/pages/product-list.xhtml">
+                                                                <span class="mm-text">Takab</span>
+                                                                <f:param name="productType" value="CARPET" />
+                                                                <f:param name="subProductType" value="Takab" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                        <li>
+                                                            <h:link outcome="/pages/product-list.xhtml">
+                                                                <span class="mm-text">Isfahan</span>
+                                                                <f:param name="productType" value="CARPET" />
+                                                                <f:param name="subProductType" value="Isfahan" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <h:link styleClass="megamenu-title" outcome="/pages/product-list.xhtml">
+                                                        <span class="mm-text">Cashew</span>
+                                                        <f:param name="productType" value="CASHEW" />
+                                                        <f:param name="page" value="1" />
+                                                    </h:link>
+                                                    <ul>
+                                                        <li>
+                                                            <h:link outcome="/pages/product-list.xhtml">
+                                                                <span class="mm-text">Yazd</span>
+                                                                <f:param name="productType" value="CASHEW" />
+                                                                <f:param name="subProductType" value="Yazd" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                        <li>
+                                                            <h:link outcome="/pages/product-list.xhtml">
+                                                                <span class="mm-text">Kerman</span>
+                                                                <f:param name="productType" value="CASHEW" />
+                                                                <f:param name="subProductType" value="Kerman" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                        <li>
+                                                            <h:link outcome="/pages/product-list.xhtml">
+                                                                <span class="mm-text">Boshehr</span>
+                                                                <f:param name="productType" value="CASHEW" />
+                                                                <f:param name="subProductType" value="Boshehr" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <h:link styleClass="megamenu-title" outcome="/pages/product-list.xhtml">
+                                                        <span class="mm-text">Enamels</span>
+                                                        <f:param name="productType" value="ENAMELS" />
+                                                        <f:param name="page" value="1" />
+                                                    </h:link>
+                                                    <ul>
+                                                        <li>
+                                                            <h:link outcome="/pages/product-list.xhtml">
+                                                                <span class="mm-text">Isfahan</span>
+                                                                <f:param name="productType" value="ENAMELS" />
+                                                                <f:param name="subProductType" value="Isfahan" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="mainmenu__item menu-item-has-children">
+                                            <h:link styleClass="mainmenu__link" outcome="/pages/blog-list.xhtml">
+                                                <span class="mm-text">Blog</span>
+                                                <f:param name="page" value="1" />
+                                            </h:link>
+                                            <ul class="megamenu">
+                                                <li>
+                                                    <h:link styleClass="megamenu-title" outcome="/pages/blog-list.xhtml">
+                                                        <span class="mm-text">Blogs</span>
+                                                        <f:param name="productType" value="CARPET" />
+                                                        <f:param name="page" value="1" />
+                                                    </h:link>
+                                                    <ul>
+                                                        <li>
+                                                            <h:link outcome="/pages/blog-list.xhtml">
+                                                                <span class="mm-text">Carpet</span>
+                                                                <f:param name="productType" value="CARPET" />
+                                                                <f:param name="subProductType" value="Bijar" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                        <li>
+                                                            <h:link outcome="/pages/product-list.xhtml">
+                                                                <span class="mm-text">Cashew</span>
+                                                                <f:param name="productType" value="CARPET" />
+                                                                <f:param name="subProductType" value="Tabriz" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                        <li>
+                                                            <h:link outcome="/pages/blog-list.xhtml">
+                                                                <span class="mm-text">Enamels</span>
+                                                                <f:param name="productType" value="CARPET" />
+                                                                <f:param name="subProductType" value="Zanjan" />
+                                                                <f:param name="page" value="1" />
+                                                            </h:link>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="mainmenu__item">
+                                            <h:link outcome="/pages/contact-us.xhtml" styleClass="mainmenu__link">
+                                                <span class="mm-text">Contact Us</span>
+                                            </h:link>
+                                        </li>
+                                        <li class="mainmenu__item">
+                                            <h:link outcome="/pages/about-us.xhtml" styleClass="mainmenu__link">
+                                                <span class="mm-text">About Us</span>
+                                            </h:link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-9 text-right">
+                            <ul class="header-toolbar">
+                                <li class="header-toolbar__item mini-cart-item">
+                                    <a href="#miniCart" class="header-toolbar__btn toolbar-btn mini-cart-btn">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <sup class="mini-cart-count">2</sup>
+                                    </a>
+                                </li>
+                                <li class="header-toolbar__item user-info">
+                                    <a href="" class="header-toolbar__btn">
+                                        <i class="fa fa-user"></i>
+                                    </a>
+                                    <ul class="user-info-menu">
+                                        <li>
+                                            <a href="my-account.html">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="cart.html">Shopping Cart</a>
+                                        </li>
+                                        <li>
+                                            <a href="checkout.html">Check Out</a>
+                                        </li>
+                                        <li>
+                                            <a href="wishlist.html">Wishlist</a>
+                                        </li>
+                                        <li>
+                                            <a href="order-tracking.html">Order tracking</a>
+                                        </li>
+                                        <li>
+                                            <a href="compare.html">compare</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="header-toolbar__item">
+                                    <a href="#searchForm" class="header-toolbar__btn toolbar-btn">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </li>
+                                <li class="header-toolbar__item d-lg-none">
+                                    <a href="#" class="header-toolbar__btn menu-btn">
+                                        <i class="fa fa-bars"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <ui:insert name="main-body"/>
+
+        <!-- Footer Start-->
+        <footer class="footer">
+            <div class="footer-top ptb--50">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-9 text-center">
+                            <div class="footer-widget mb--50">
+                                <div class="textwidget">
+                                    <h:graphicImage library="images" name="brand.png"/>
+                                </div>
+                            </div>
+                            <div class="footer-widget mb--50 pb--1">
+                                <ul class="footer-menu">
+                                    <li>
+                                        <h:link outcome="/pages/home.xhtml">
+                                            Home
+                                        </h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/pages/blog-list.xhtml">
+                                            Blogs
+                                        </h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/pages/product-list.xhtml">
+                                            Products
+                                        </h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/pages/about-us.xhtml">
+                                            About Us
+                                        </h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/pages/contact-us.xhtml">
+                                            Contact Us
+                                        </h:link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-widget">
+                                <!-- Social Icons Start Here -->
+                                <ul class="social">
+                                    <li class="social__item">
+                                        <a href="https://www.instagram.com/alikhahaslali/" class="social__link google-plus">
+                                            <span>Instagram</span>
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="https://www.linkedin.com/in/ali-alikhah-0795871b6/" class="social__link facebook">
+                                            <span>Linkedin</span>
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="#" class="social__link pinterest">
+                                            <span>pinterest</span>
+                                            <i class="fa fa-pinterest-p"></i>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="#" class="social__link twitter">
+                                            <span>twitter</span>
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- Social Icons End Here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom border-top ptb--25">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 text-sm-left text-center mb-xs--10">
+                            <p class="copyright-text">Creator and manager: <a href="https://www.mellatweb.com/"> Ali Alikhah Asl</a></p>
+                        </div>
+                        <div class="col-sm-6 text-sm-right text-center">
+                            <figure>
+                                <h:graphicImage library="assets" name="img/others/payment.png"/>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End-->
+
+        <!-- Searchform Popup Start -->
+        <div class="searchform__popup" id="searchForm">
+            <a href="#" class="btn-close"><i class="fa fa-close"></i></a>
+            <div class="searchform__body">
+                <p>Start typing and press Enter to search</p>
+                <form class="searchform">
+                    <input type="text" name="popup-search" id="popup-search" class="searchform__input" placeholder="Search Entire Store..."/>
+                    <button type="submit" class="searchform__submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <!-- Searchform Popup End -->
+
+        <!-- Mini Cart Start -->
+        <aside class="mini-cart" id="miniCart">
+            <div class="mini-cart-wrapper">
+                <a href="" class="btn-close"><i class="fa fa-"></i></a>
+                <div class="mini-cart-inner">
+                    <h3 class="mini-cart__heading mb--40 mb-lg--30">Shopping Cart</h3>
+                    <div class="mini-cart__content">
+                        <ul class="mini-cart__list">
+                            <li class="mini-cart__product">
+                                <a href="#" class="remove-from-cart remove">
+                                    <i class="fa fa-crosshairs"></i>
+                                </a>
+                                <div class="mini-cart__product__image">
+                                    <h:graphicImage library="assets" name="img/products/prod-1-100x100.jpg"/>
+                                </div>
+                                <div class="mini-cart__product__content">
+                                    <a class="mini-cart__product__title" href="product-details.html">Chain print bermuda shorts  </a>
+                                    <span class="mini-cart__product__quantity">1 x $49.00</span>
+                                </div>
+                            </li>
+                            <li class="mini-cart__product">
+                                <a href="#" class="remove-from-cart remove">
+                                    <i class="fa fa-close"></i>
+                                </a>
+                                <div class="mini-cart__product__image">
+                                    <h:graphicImage library="assets" name="img/products/prod-2-100x100.jpg"/>
+                                </div>
+                                <div class="mini-cart__product__content">
+                                    <a class="mini-cart__product__title" href="product-details.html">Waxed-effect pleated skirt</a>
+                                    <span class="mini-cart__product__quantity">1 x $49.00</span>
+                                </div>
+                            </li>
+                            <li class="mini-cart__product">
+                                <a href="#" class="remove-from-cart remove">
+                                    <i class="fa fa-close"></i>
+                                </a>
+                                <div class="mini-cart__product__image">
+                                    <h:graphicImage library="assets" name="img/products/prod-5-100x100.jpg"/>
+                                </div>
+                                <div class="mini-cart__product__content">
+                                    <a class="mini-cart__product__title" href="product-details.html">Waxed-effect pleated skirt</a>
+                                    <span class="mini-cart__product__quantity">1 x $49.00</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mini-cart__total">
+                            <span>Subtotal</span>
+                            <span class="ammount">$98.00</span>
+                        </div>
+                        <div class="mini-cart__buttons">
+                            <a href="cart.html" class="btn btn-fullwidth btn-bg-sand mb--20">View Cart</a>
+                            <a href="checkout.html" class="btn btn-fullwidth btn-bg-sand">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Mini Cart End -->
+
+        <!-- Global Overlay Start -->
+        <div class="zakas-global-overlay"></div>
+        <!-- Global Overlay End -->
+
+        <!-- Qicuk View Modal Start -->
+        <div class="modal fade product-modal" id="productModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                        </button>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="zakas-element-carousel nav-vertical-center"
+                                     data-slick-options='{
+                            "slidesToShow": 1,
+                            "slidesToScroll": 1,
+                            "arrows": true,
+                            "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-double-left" },
+                            "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-double-right" }
+                        }'
+                                >
+                                    <div class="product-image">
+                                        <div class="product-image--holder">
+                                            <a href="product-details.html">
+                                                <h:graphicImage library="assets" name="img/products/prod-9-1.jpg" styleClass="primary-image"/>
+                                            </a>
+                                        </div>
+                                        <span class="product-badge sale">sale</span>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-image--holder">
+                                            <a href="product-details.html">
+                                                <h:graphicImage library="assets" name="img/products/prod-9-1.jpg" styleClass="primary-image"/>
+                                            </a>
+                                        </div>
+                                        <span class="product-badge sale">sale</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="modal-box product-summary">
+                                    <div class="product-navigation text-right mb--20">
+                                        <a href="#" class="prev"><i class="fa fa-angle-double-left"></i></a>
+                                        <a href="#" class="next"><i class="fa fa-angle-double-right"></i></a>
+                                    </div>
+                                    <div class="product-rating d-flex mb--20">
+                                        <div class="star-rating star-three">
+                                            <span>Rated <strong class="rating">5.00</strong> out of 5</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="product-title mb--20">Black Blazer</h3>
+                                    <p class="product-short-description mb--25">Donec accumsan auctor iaculis. Sed suscipit arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo eget, sodales orci. Aliquam egestas libero ac turpis pharetra, in vehicula lacus scelerisque. Vestibulum ut sem laoreet, feugiat tellus at, hendrerit arcu.</p>
+                                    <div class="product-price-wrapper mb--25">
+                                        <span class="money">$200.00</span>
+                                        <span class="price-separator">-</span>
+                                        <span class="money">$400.00</span>
+                                    </div>
+                                    <form action="#" class="variation-form mb--30">
+                                        <div class="product-color-variations d-flex align-items-center mb--20">
+                                            <p class="variation-label">Color:</p>
+                                            <div class="product-color-variation variation-wrapper">
+                                                <div class="variation">
+                                                    <a class="product-color-variation-btn red selected" data-toggle="tooltip" data-placement="top" title="Red">
+                                                        <span class="product-color-variation-label">Red</span>
+                                                    </a>
+                                                </div>
+                                                <div class="variation">
+                                                    <a class="product-color-variation-btn black" data-toggle="tooltip" data-placement="top" title="Black">
+                                                        <span class="product-color-variation-label">Black</span>
+                                                    </a>
+                                                </div>
+                                                <div class="variation">
+                                                    <a class="product-color-variation-btn pink" data-toggle="tooltip" data-placement="top" title="Pink">
+                                                        <span class="product-color-variation-label">Pink</span>
+                                                    </a>
+                                                </div>
+                                                <div class="variation">
+                                                    <a class="product-color-variation-btn blue" data-toggle="tooltip" data-placement="top" title="Blue">
+                                                        <span class="product-color-variation-label">Blue</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-size-variations d-flex align-items-center mb--15">
+                                            <p class="variation-label">Size:</p>
+                                            <div class="product-size-variation variation-wrapper">
+                                                <div class="variation">
+                                                    <a class="product-size-variation-btn selected" data-toggle="tooltip" data-placement="top" title="S">
+                                                        <span class="product-size-variation-label">S</span>
+                                                    </a>
+                                                </div>
+                                                <div class="variation">
+                                                    <a class="product-size-variation-btn" data-toggle="tooltip" data-placement="top" title="M">
+                                                        <span class="product-size-variation-label">M</span>
+                                                    </a>
+                                                </div>
+                                                <div class="variation">
+                                                    <a class="product-size-variation-btn" data-toggle="tooltip" data-placement="top" title="L">
+                                                        <span class="product-size-variation-label">L</span>
+                                                    </a>
+                                                </div>
+                                                <div class="variation">
+                                                    <a class="product-size-variation-btn" data-toggle="tooltip" data-placement="top" title="XL">
+                                                        <span class="product-size-variation-label">XL</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="" class="reset_variations">Clear</a>
+                                    </form>
+                                    <div class="product-action d-flex flex-sm-row flex-column align-items-sm-center align-items-start mb--30">
+                                        <div class="quantity-wrapper d-flex align-items-center mr--30 mr-xs--0 mb-xs--30">
+                                            <label class="quantity-label" for="quick-qty">Quantity:</label>
+                                            <div class="quantity">
+                                                <input type="number" class="quantity-input" name="qty" id="quick-qty" value="1" min="1"/>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-small btn-bg-red btn-color-white btn-hover-2" onclick="window.location.href='cart.html'">
+                                            Add To Cart
+                                        </button>
+                                    </div>
+                                    <div class="product-footer-meta">
+                                        <p><span>Category:</span>
+                                            <a href="shop.html">Full Sweater</a>,
+                                            <a href="shop.html">SweatShirt</a>,
+                                            <a href="shop.html">Jacket</a>,
+                                            <a href="shop.html">Blazer</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Qicuk View Modal End -->
+    </div>
+
+</f:view>
+    <h:outputScript library="assets" name="js/vendor.js" />
+    <h:outputScript library="assets" name="js/main.js" />
+</h:body>
+</html>
