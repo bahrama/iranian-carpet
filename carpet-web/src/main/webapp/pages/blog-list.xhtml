@@ -4,7 +4,12 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ui:define name="main-head"></ui:define>
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam name="blogType"/>
+            <f:viewParam name="page" />
+        </f:metadata>
+    </ui:define>
     <ui:define name="main-body">
 
         <!-- Breadcrumb area Start -->
@@ -31,268 +36,57 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
+                            <ui:repeat value="#{blogListPageManageBeanView.findBlogByType(blogType,12,page)}" var="blg">
                             <article class="blog blog-style-2 blog-list mb--50">
                                 <div class="blog-media">
                                     <figure class="image">
                                         <a href="blog-details-image.html">
-                                            <img src="assets/img/blog/blog-1.jpg" alt="Blog"/>
+                                            <h:link outcome="/pages/blog-detail.xhtml">
+                                                <h:graphicImage style="max-width:100%; height:300px!important" alt="#{blg.altPic1}"
+                                                                rendered="#{blg.pic1 ne null}"
+                                                                value="http://localhost:8082/Images/#{blg.pic1}.jpg"/>
+                                                <f:param name="id" value="#{blg.id}" />
+                                            </h:link>
                                         </a>
                                     </figure>
                                 </div>
                                 <div class="blog-info">
                                     <h2 class="blog-title">
-                                        <a href="single-post-image.html">She Belived She Could</a>
+                                        <h:link outcome="/pages/blog-detail.xhtml">
+                                        #{blg.name}
+                                            <f:param name="id" value="#{blg.id}" />
+                                        </h:link>
                                     </h2>
                                     <div class="blog-content mb--25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum deserunt distinctio architecto, laboriosam molestias consequatur.</p>
+                                        <p>#{blg.littleDesc}</p>
                                     </div>
                                     <div class="blog-meta">
-                                        <div class="blog-meta--left">
-                                            <a href="blog-details-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-comment-o"></i>
-                                                <sup>05</sup>
-                                            </a>
-                                            <a href="blog-details-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <sup>06</sup>
-                                            </a>
-                                        </div>
                                         <div class="blog-meta--right">
                                             <a href="blog-details-image.html" class="btn btn-no-bg btn-color-dark">Read More <i class="fa fa-angle-double-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </article>
-                            <article class="blog blog-style-2 blog-list mb--50">
-                                <div class="blog-media">
-                                    <figure class="image">
-                                        <a href="single-post-image.html">
-                                            <img src="assets/img/blog/blog-2.jpg" alt="Blog"/>
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="blog-info">
-                                    <h2 class="blog-title">
-                                        <a href="single-post-image.html">Monday to Sunday</a>
-                                    </h2>
-                                    <div class="blog-content mb--25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum deserunt distinctio architecto, laboriosam molestias consequatur.</p>
-                                    </div>
-                                    <div class="blog-meta">
-                                        <div class="blog-meta--left">
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-comment-o"></i>
-                                                <sup>05</sup>
-                                            </a>
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <sup>06</sup>
-                                            </a>
-                                        </div>
-                                        <div class="blog-meta--right">
-                                            <a href="single-post-image.html" class="btn btn-no-bg btn-color-dark">Read More <i class="fa fa-angle-double-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="blog blog-style-2 blog-list mb--50">
-                                <div class="blog-media">
-                                    <figure class="image">
-                                        <a href="single-post-image.html">
-                                            <img src="assets/img/blog/blog-3.jpg" alt="Blog"/>
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="blog-info">
-                                    <h2 class="blog-title">
-                                        <a href="single-post-image.html">Monday to Sunday</a>
-                                    </h2>
-                                    <div class="blog-content mb--25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum deserunt distinctio architecto, laboriosam molestias consequatur.</p>
-                                    </div>
-                                    <div class="blog-meta">
-                                        <div class="blog-meta--left">
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-comment-o"></i>
-                                                <sup>05</sup>
-                                            </a>
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <sup>06</sup>
-                                            </a>
-                                        </div>
-                                        <div class="blog-meta--right">
-                                            <a href="single-post-image.html" class="btn btn-no-bg btn-color-dark">Read More <i class="fa fa-angle-double-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="blog blog-style-2 blog-list mb--50">
-                                <div class="blog-media">
-                                    <figure class="image">
-                                        <a href="single-post-image.html">
-                                            <img src="assets/img/blog/blog_beuty2-390x390.jpg" alt="Blog"/>
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="blog-info">
-                                    <h2 class="blog-title">
-                                        <a href="single-post-image.html">Monday to Sunday</a>
-                                    </h2>
-                                    <div class="blog-content mb--25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum deserunt distinctio architecto, laboriosam molestias consequatur.</p>
-                                    </div>
-                                    <div class="blog-meta">
-                                        <div class="blog-meta--left">
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-comment-o"></i>
-                                                <sup>05</sup>
-                                            </a>
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <sup>06</sup>
-                                            </a>
-                                        </div>
-                                        <div class="blog-meta--right">
-                                            <a href="single-post-image.html" class="btn btn-no-bg btn-color-dark">Read More <i class="fa fa-angle-double-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="blog blog-style-2 blog-list mb--50">
-                                <div class="blog-media">
-                                    <figure class="image">
-                                        <a href="single-post-image.html">
-                                            <img src="assets/img/blog/blog_beuty-390x390.jpg" alt="Blog"/>
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="blog-info">
-                                    <h2 class="blog-title">
-                                        <a href="single-post-image.html">Monday to Sunday</a>
-                                    </h2>
-                                    <div class="blog-content mb--25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum deserunt distinctio architecto, laboriosam molestias consequatur.</p>
-                                    </div>
-                                    <div class="blog-meta">
-                                        <div class="blog-meta--left">
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-comment-o"></i>
-                                                <sup>05</sup>
-                                            </a>
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <sup>06</sup>
-                                            </a>
-                                        </div>
-                                        <div class="blog-meta--right">
-                                            <a href="single-post-image.html" class="btn btn-no-bg btn-color-dark">Read More <i class="fa fa-angle-double-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="blog blog-style-2 blog-list mb--50">
-                                <div class="blog-media">
-                                    <figure class="image">
-                                        <a href="single-post-image.html">
-                                            <img src="assets/img/blog/blog-5-390x390.jpg" alt="Blog"/>
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="blog-info">
-                                    <h2 class="blog-title">
-                                        <a href="single-post-image.html">Monday to Sunday</a>
-                                    </h2>
-                                    <div class="blog-content mb--25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum deserunt distinctio architecto, laboriosam molestias consequatur.</p>
-                                    </div>
-                                    <div class="blog-meta">
-                                        <div class="blog-meta--left">
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-comment-o"></i>
-                                                <sup>05</sup>
-                                            </a>
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <sup>06</sup>
-                                            </a>
-                                        </div>
-                                        <div class="blog-meta--right">
-                                            <a href="single-post-image.html" class="btn btn-no-bg btn-color-dark">Read More <i class="fa fa-angle-double-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="blog blog-style-2 blog-list mb--50">
-                                <div class="blog-media">
-                                    <figure class="image">
-                                        <a href="single-post-image.html">
-                                            <img src="assets/img/blog/blog-6-390x390.jpg" alt="Blog"/>
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="blog-info">
-                                    <h2 class="blog-title">
-                                        <a href="single-post-image.html">Monday to Sunday</a>
-                                    </h2>
-                                    <div class="blog-content mb--25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum deserunt distinctio architecto, laboriosam molestias consequatur.</p>
-                                    </div>
-                                    <div class="blog-meta">
-                                        <div class="blog-meta--left">
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-comment-o"></i>
-                                                <sup>05</sup>
-                                            </a>
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <sup>06</sup>
-                                            </a>
-                                        </div>
-                                        <div class="blog-meta--right">
-                                            <a href="single-post-image.html" class="btn btn-no-bg btn-color-dark">Read More <i class="fa fa-angle-double-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="blog blog-style-2 blog-list mb--50">
-                                <div class="blog-media">
-                                    <figure class="image">
-                                        <a href="single-post-image.html">
-                                            <img src="assets/img/blog/blog-7-390x390.jpg" alt="Blog"/>
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="blog-info">
-                                    <h2 class="blog-title">
-                                        <a href="single-post-image.html">Monday to Sunday</a>
-                                    </h2>
-                                    <div class="blog-content mb--25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum deserunt distinctio architecto, laboriosam molestias consequatur.</p>
-                                    </div>
-                                    <div class="blog-meta">
-                                        <div class="blog-meta--left">
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-comment-o"></i>
-                                                <sup>05</sup>
-                                            </a>
-                                            <a href="single-post-image.html" class="blog-meta-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <sup>06</sup>
-                                            </a>
-                                        </div>
-                                        <div class="blog-meta--right">
-                                            <a href="single-post-image.html" class="btn btn-no-bg btn-color-dark">Read More <i class="fa fa-angle-double-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
+                            </ui:repeat>
                             <nav class="pagination-wrap">
                                 <ul class="pagination">
                                     <li><a href="#" class="prev page-number"><i class="fa fa-angle-double-left"></i></a></li>
-                                    <li><span class="current page-number">1</span></li>
-                                    <li><a href="#" class="page-number">2</a></li>
-                                    <li><a href="#" class="page-number">3</a></li>
+                                    <ui:repeat value="#{blogListPageManageBeanView.findPaginationNumbers(blogType,12)}" var="pg">
+                                        <h:panelGroup rendered="#{(pg eq page)}">
+                                            <h:link outcome="/pages/blog-list.xhtml">
+                                                <li><span class="current page-number">#{pg}</span></li>
+                                                <f:param name="page" value="#{pg}" />
+                                                <f:param disable="#{blogType eq null}" name="blogType" value="#{blogType}" />
+                                            </h:link>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{(pg ne page)}">
+                                            <h:link outcome="/pages/blog-list.xhtml">
+                                                <li><span class="page-number">#{pg}</span></li>
+                                                <f:param name="page" value="#{pg}" />
+                                                <f:param disable="#{blogType eq null}" name="blogType" value="#{blogType}" />
+                                            </h:link>
+                                        </h:panelGroup>
+                                    </ui:repeat>
                                     <li><a href="#" class="next page-number"><i class="fa fa-angle-double-right"></i></a></li>
                                 </ul>
                             </nav>

@@ -1,7 +1,8 @@
-package com.iranian.carpet.view.product;
+package com.iranian.carpet.view.blog;
 
+import com.iranian.carpet.dto.blog.BlogDto;
 import com.iranian.carpet.dto.product.ProductDto;
-import com.iranian.carpet.service.product.ProductService;
+import com.iranian.carpet.service.blog.BlogService;
 import org.primefaces.model.FilterMeta;
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.SortMeta;
@@ -10,34 +11,35 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LazyProductDataModel extends LazyDataModel<ProductDto> {
+public class LazyBlogDataModel extends LazyDataModel<BlogDto> {
 
-    public LazyProductDataModel(ProductService productService) {
-        this.datasource = productService;
+    private BlogService blogService;
+    public LazyBlogDataModel(BlogService blogService){
+        this.blogService = blogService;
     }
-
     @Override
     public int count(Map<String, FilterMeta> map) {
-        return datasource.countProduct();
+        return blogService.countBlog();
     }
 
-    private ProductService datasource;
-
     @Override
-    public ProductDto getRowData(String rowKey) {
+    public BlogDto getRowData(String rowKey) {
         if(!rowKey.equals("null"))
-        return datasource.findProductById(Long.valueOf(rowKey));
+            return blogService.findBlogById(Long.valueOf(rowKey));
         else
-            return new ProductDto();
+            return new BlogDto();
     }
 
     @Override
-    public String getRowKey(ProductDto productDto) {
-        return String.valueOf(productDto.getId());
+    public String getRowKey(BlogDto blogDto) {
+        return String.valueOf(blogDto.getId());
     }
 
+
+
+
     @Override
-    public List<ProductDto> load(int offset, int pageSize, Map<String, SortMeta> sortBy, Map<String, FilterMeta> filterBy) {
+    public List<BlogDto> load(int offset, int pageSize, Map<String, SortMeta> sortBy, Map<String, FilterMeta> filterBy) {
         Map<String,String> filter = new HashMap<>();
         Map<String,String> sort = new HashMap<>();
         if(filterBy.size()>0){
@@ -50,6 +52,8 @@ public class LazyProductDataModel extends LazyDataModel<ProductDto> {
                 sort.put(k,v.getOrder().name());
             });
         }
-        return datasource.search(offset,pageSize,sort,filter);
+        return blogService.search(offset,pageSize,sort,filter);
     }
+
+
 }
