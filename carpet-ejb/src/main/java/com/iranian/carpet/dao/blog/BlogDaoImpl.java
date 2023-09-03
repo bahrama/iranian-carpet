@@ -107,7 +107,7 @@ public class BlogDaoImpl implements BlogDao{
         String q = "select count(*) as count from blog where 1=1 \n";
         StringBuilder queryBuilder =new StringBuilder(q);
         if(blogType!=null &&!blogType.toString().isEmpty()){
-            queryBuilder.append(" and product_type = ? \n");
+            queryBuilder.append(" and blog_type = ? \n");
         }
         Query query = em.createNativeQuery(queryBuilder.toString());
         if(blogType!=null && !blogType.toString().isEmpty()){

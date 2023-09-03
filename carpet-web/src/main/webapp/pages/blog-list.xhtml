@@ -46,6 +46,7 @@
                                                                 rendered="#{blg.pic1 ne null}"
                                                                 value="http://localhost:8082/Images/#{blg.pic1}.jpg"/>
                                                 <f:param name="id" value="#{blg.id}" />
+                                                <f:param name="name" value="#{blogListPageManageBeanView.replaceSpaceWithDash(blg.name)}" />
                                             </h:link>
                                         </a>
                                     </figure>

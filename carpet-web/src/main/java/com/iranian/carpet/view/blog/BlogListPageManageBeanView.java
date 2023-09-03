@@ -6,6 +6,7 @@ import com.iranian.carpet.service.blog.BlogService;
 import com.iranian.carpet.util.BlogType;
 import com.iranian.carpet.util.ProductType;
 import com.iranian.carpet.util.SubProductType;
+import com.iranian.carpet.view.utils.StringConvertUtil;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -63,5 +64,9 @@ public class BlogListPageManageBeanView implements Serializable {
             integers.add(i);
         }
         return integers;
+    }
+
+    public String replaceSpaceWithDash(String name){
+       return StringConvertUtil.convertSpaceToDash(name);
     }
 }

@@ -81,6 +81,7 @@
                                                                             rendered="#{product.pic1 ne null}"
                                                                             value="http://localhost:8082/Images/#{product.pic1}.jpg"/>
                                                             <f:param name="code" value="#{product.code}" />
+                                                            <f:param name="name" value="#{productListPageManageBeanView.convertSpaceToDash(product.name)}" />
                                                             </h:link>
                                                         <span class="product-badge">New</span>
                                                     </figure>
@@ -89,6 +90,7 @@
                                                             <h:link outcome="/pages/product-detail.xhtml">
                                                             #{product.title}
                                                             <f:param name="code" value="#{product.code}" />
+                                                                <f:param name="name" value="#{productListPageManageBeanView.convertSpaceToDash(product.name)}" />
                                                             </h:link>
                                                         </h3>
                                                         <div class="product-price-wrapper mb--30">

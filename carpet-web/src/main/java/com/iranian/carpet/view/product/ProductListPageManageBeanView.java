@@ -4,6 +4,7 @@ import com.iranian.carpet.dto.product.ProductDto;
 import com.iranian.carpet.service.product.ProductService;
 import com.iranian.carpet.util.ProductType;
 import com.iranian.carpet.util.SubProductType;
+import com.iranian.carpet.view.utils.StringConvertUtil;
 import jakarta.faces.application.NavigationHandler;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.event.AjaxBehaviorEvent;
@@ -99,6 +100,10 @@ public class ProductListPageManageBeanView implements Serializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public String convertSpaceToDash(String name){
+        return StringConvertUtil.convertSpaceToDash(name);
     }
 
 }

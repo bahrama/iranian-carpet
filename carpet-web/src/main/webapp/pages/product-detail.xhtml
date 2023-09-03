@@ -7,6 +7,7 @@
     <ui:define name="metadata">
         <f:metadata>
             <f:viewParam name="code"/>
+            <f:viewParam name="name"/>
         </f:metadata>
     </ui:define>
 
@@ -254,6 +255,7 @@
                                                         <h:link outcome="/pages/product-detail.xhtml">
                                                             #{product.name}
                                                             <f:param name="code" value="#{product.code}" />
+                                                            <f:param name="name" value="#{productListPageManageBeanView.convertSpaceToDash(product.name)}" />
                                                         </h:link>
                                                     </h3>
                                                     <div class="product-price-wrapper mb--30">
