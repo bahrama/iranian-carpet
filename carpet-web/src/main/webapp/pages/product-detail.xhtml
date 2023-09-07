@@ -8,11 +8,34 @@
         <f:metadata>
             <f:viewParam name="code"/>
             <f:viewParam name="name"/>
+            <f:viewParam name="productType"/>
+            <f:viewParam name="subProductType" />
         </f:metadata>
     </ui:define>
 
     <ui:define name="main-head">
         <title>#{productDetailPageManageBeanView.findProductByCode(code).title}</title>
+        <style>
+            .justify-blog{
+                text-align: justify;
+                border: 1px solid gainsboro;
+                padding: 10px;
+                box-shadow: 2px 5px 5px gainsboro;
+            }
+            .p-blog{
+                overflow: auto;
+            }
+            .img-blog{
+                max-width:100%;width: 100%;border-radius: 5px;
+            }
+            .mfp-iframe-holder{
+                max-height: 900px!important;
+                height: 100%!important;
+            }
+            .shrinkToFit{
+                width: 100%!important;
+            }
+        </style>
     </ui:define>
     <ui:define name="main-body">
         <!-- Breadcrumb area Start -->
@@ -21,10 +44,28 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
-                            <h1 class="page-title">Shop</h1>
                             <ul class="breadcrumb">
-                                <li><a href="index.html">Home</a></li>
-                                <li class="current"><span>Product Details</span></li>
+                                <li>
+                                    <h:link outcome="/pages/home.xhtml" styleClass="mainmenu__link">
+                                        Home
+                                    </h:link>
+                                </li>
+                                <li>
+                                    <h:link outcome="/pages/product-list.xhtml" styleClass="mainmenu__link">
+                                        #{productType}
+                                        <f:param name="productType" value="#{productType}" />
+                                        <f:param name="page" value="1" />
+                                    </h:link>
+                                </li>
+                                <li>
+                                    <h:link outcome="/pages/product-list.xhtml" styleClass="mainmenu__link">
+                                        #{subProductType}
+                                        <f:param name="productType" value="#{productType}" />
+                                        <f:param name="subProductType" value="#{subProductType}" />
+                                        <f:param name="page" value="1" />
+                                    </h:link>
+                                </li>
+                                <li class="current"><span> #{productDetailPageManageBeanView.productDto.title}</span></li>
                             </ul>
                         </div>
                     </div>

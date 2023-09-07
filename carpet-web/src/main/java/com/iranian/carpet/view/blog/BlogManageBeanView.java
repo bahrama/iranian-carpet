@@ -83,7 +83,7 @@ public class BlogManageBeanView implements Serializable {
 
     public void onRowSelect(SelectEvent<BlogDto> event) {
         try {
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/carpet-web/admin/blog/blog.xhtml?blogId=" + event.getObject().getId());
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/admin/blog/blog.xhtml?blogId=" + event.getObject().getId());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

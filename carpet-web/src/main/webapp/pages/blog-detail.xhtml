@@ -7,11 +7,33 @@
         <f:metadata>
             <f:viewParam name="id"/>
             <f:viewParam name="name"/>
+            <f:viewParam name="blogType"/>
         </f:metadata>
     </ui:define>
 
     <ui:define name="main-head">
         <title>#{blogDetailPageManageBeanView.findBlogDtoById(id).title}</title>
+        <style>
+            .justify-blog{
+                text-align: justify;
+                border: 1px solid gainsboro;
+                padding: 10px;
+                box-shadow: 2px 5px 5px gainsboro;
+            }
+            .p-blog{
+                overflow: auto;
+            }
+            .img-blog{
+                max-width:100%;width: 100%;border-radius: 5px;
+            }
+            .mfp-iframe-holder{
+                max-height: 900px!important;
+                height: 100%!important;
+            }
+            .shrinkToFit{
+                width: 100%!important;
+            }
+        </style>
     </ui:define>
     <ui:define name="main-body">
 
@@ -22,8 +44,19 @@
                     <div class="col-12">
                         <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
                             <ul class="breadcrumb">
-                                <li><a href="index.html">Home</a></li>
-                                <li class="current"><span>Blog Details</span></li>
+                                <li>
+                                    <h:link outcome="/pages/home.xhtml" styleClass="mainmenu__link">
+                                        Home
+                                    </h:link>
+                                </li>
+                                <li>
+                                <h:link outcome="/pages/blog-list.xhtml" styleClass="mainmenu__link">
+                                    #{blogType}
+                                    <f:param name="blogType" value="#{blogType}" />
+                                    <f:param name="page" value="1" />
+                                </h:link>
+                                </li>
+                                <li class="current"><span>#{blogDetailPageManageBeanView.blogDto.title}</span></li>
                             </ul>
                         </div>
                     </div>
@@ -42,39 +75,25 @@
                                 <!-- Single Blog Start Here -->
                                 <article class="single-post-details">
                                     <div class="entry-header">
-                                        <h1 class="entry-title">#{blogDetailPageManageBeanView.blogDto.h1Title}</h1>
+                                        <h1 class="entry-title" style="text-align: justify">#{blogDetailPageManageBeanView.blogDto.h1Title}</h1>
                                         <div class="entry-meta mb--30">
-                                            <a href="blog.html" class="posted-on">#{blogDetailPageManageBeanView.blogDto.blogDate}</a>
-                                            <span class="meta-separator">-</span>
-                                            <a href="blog.html">category : #{blogDetailPageManageBeanView.blogDto.blogType}</a>
+                                                <h:link outcome="/pages/blog-list.xhtml" styleClass="mainmenu__link">
+                                                category : #{blogDetailPageManageBeanView.blogDto.blogType}
+                                                    <f:param name="blogType" value="#{blogDetailPageManageBeanView.blogDto.blogType}" />
+                                                    <f:param name="page" value="1" />
+                                                </h:link>
                                         </div>
                                     </div>
 
-                                    <div class="entry-content">
+                                    <div class="entry-content justify-blog">
                                         <h:outputText value="#{blogDetailPageManageBeanView.blogDto.description}"
                                                       escape="false" />
                                     </div>
-                                    <div class="entry-media">
-                                        <div class="embed-responsive">
-                                            <h:graphicImage style="max-width:100%;width: 100%;" alt="#{blogDetailPageManageBeanView.blogDto.altPic1}"
-                                                            rendered="#{blogDetailPageManageBeanView.blogDto.pic1 ne null}"
-                                                            value="http://localhost:8082/Images/#{blogDetailPageManageBeanView.blogDto.pic1}.jpg"/>
-                                        </div>
-                                    </div>
                                     <div class="entry-footer-meta">
-                                        <div class="tag-list">
-                                            <span>
-                                                <i class="fa fa-tags"></i>
-                                            </span>
-                                            <span>
-                                                <a href="blog.html">Business</a>,
-                                                <a href="blog.html">Creative</a>,
-                                                <a href="blog.html">Start-up</a>
-                                            </span>
-                                        </div>
                                         <div class="author">
                                             <span>
-                                                Author: <a href="blog.html">John Snow</a>
+                                                Author: <a href="blog.html">Ali Alikhah</a> <br/>
+                                                Publish Date : <a href="blog.html" class="posted-on">#{blogDetailPageManageBeanView.blogDto.blogDate}</a>
                                             </span>
                                         </div>
                                     </div>

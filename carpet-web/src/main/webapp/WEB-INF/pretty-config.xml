@@ -4,40 +4,86 @@
 	xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
                       http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
 
+	<url-mapping id="view4">
+		<pattern value="/products" />
+		<view-id value="/pages/product-list.xhtml?page=1" />
+	</url-mapping>
+
 
 	<url-mapping id="view1">
-		<pattern value="/products/#{page}" />
+		<pattern value="/products/page=#{page}" />
 		<view-id value="/pages/product-list.xhtml" />
 	</url-mapping>
 
-	<url-mapping id="view2">
-		<pattern value="/products/#{page}/#{productType}" />
+	<url-mapping id="view5">
+		<pattern value="/products/#{productType}" />
+		<view-id value="/pages/product-list.xhtml?page=1" />
+	</url-mapping>
+
+	<url-mapping id="view5">
+		<pattern value="/products/#{productType}/page=#{page}" />
 		<view-id value="/pages/product-list.xhtml" />
 	</url-mapping>
 
-	<url-mapping id="view3">
-		<pattern value="/products/#{page}/#{productType}/#{subProductType}" />
+	<url-mapping id="view5">
+		<pattern value="/products/#{productType}/#{subProductType}" />
+		<view-id value="/pages/product-list.xhtml?page=1" />
+	</url-mapping>
+
+
+	<url-mapping id="view5">
+		<pattern value="/products/#{productType}/#{subProductType}/page=#{page}" />
 		<view-id value="/pages/product-list.xhtml" />
 	</url-mapping>
+
+	<url-mapping id="view7">
+		<pattern value="/products/#{productType}/#{subProductType}/#{code}" />
+		<view-id value="/pages/product-detail.xhtml" />
+	</url-mapping>
+
+	<url-mapping id="view7">
+		<pattern value="/products/#{productType}/#{subProductType}/#{code}/#{name}" />
+		<view-id value="/pages/product-detail.xhtml" />
+	</url-mapping>
+
+
 
 
 	<url-mapping id="view4">
-		<pattern value="/blogs/#{page}" />
+		<pattern value="/blogs" />
+		<view-id value="/pages/blog-list.xhtml?page=1" />
+	</url-mapping>
+
+	<url-mapping id="view4">
+		<pattern value="/blogs/page=#{page}" />
+		<view-id value="/pages/blog-list.xhtml" />
+	</url-mapping>
+
+
+
+	<url-mapping id="view5">
+		<pattern value="/blogs/#{blogType}/page=#{page}" />
 		<view-id value="/pages/blog-list.xhtml" />
 	</url-mapping>
 
 	<url-mapping id="view5">
-		<pattern value="/blogs/#{page}/#{blogType}" />
-		<view-id value="/pages/blog-list.xhtml" />
+		<pattern value="/blogs/#{blogType}" />
+		<view-id value="/pages/blog-list.xhtml?page=1" />
 	</url-mapping>
 
 	<url-mapping id="view6">
-		<pattern value="/blog/#{id}/#{name}" />
+		<pattern value="/blogs/#{blogType}/#{id}" />
 		<view-id value="/pages/blog-detail.xhtml" />
 	</url-mapping>
 
-	<url-mapping id="view7">
-		<pattern value="/product/#{code}/#{name}" />
-		<view-id value="/pages/product-detail.xhtml" />
+
+	<url-mapping id="view6">
+		<pattern value="/blogs/#{blogType}/#{id}/#{name}" />
+		<view-id value="/pages/blog-detail.xhtml" />
 	</url-mapping>
+
+
+
+
+
 </pretty-config>

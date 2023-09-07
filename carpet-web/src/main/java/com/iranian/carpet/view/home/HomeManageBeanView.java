@@ -79,7 +79,7 @@ public class HomeManageBeanView implements Serializable {
 
     public void onRowSelect(SelectEvent<HomeDto> event) {
         try {
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/carpet-web/admin/home/home.xhtml?homeId=" + event.getObject().getId());
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/admin/home/home.xhtml?homeId=" + event.getObject().getId());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

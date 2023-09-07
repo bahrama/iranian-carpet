@@ -17,10 +17,15 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
-                            <h1 class="page-title">Shop</h1>
                             <ul class="breadcrumb">
-                                <li><a href="index.html">Home</a></li>
-                                <li class="current"><span>Shop</span></li>
+                                <li>
+                                    <h:link outcome="/pages/home.xhtml" styleClass="mainmenu__link">
+                                        Home
+                                    </h:link>
+                                </li>
+                                <li>
+                                    Product List
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -82,6 +87,8 @@
                                                                             value="http://localhost:8082/Images/#{product.pic1}.jpg"/>
                                                             <f:param name="code" value="#{product.code}" />
                                                             <f:param name="name" value="#{productListPageManageBeanView.convertSpaceToDash(product.name)}" />
+                                                            <f:param name="productType" value="#{product.productType}" />
+                                                            <f:param name="subProductType" value="#{product.subProductType}" />
                                                             </h:link>
                                                         <span class="product-badge">New</span>
                                                     </figure>
@@ -89,8 +96,10 @@
                                                         <h3 class="product-title mb--15">
                                                             <h:link outcome="/pages/product-detail.xhtml">
                                                             #{product.title}
-                                                            <f:param name="code" value="#{product.code}" />
+                                                                <f:param name="code" value="#{product.code}" />
                                                                 <f:param name="name" value="#{productListPageManageBeanView.convertSpaceToDash(product.name)}" />
+                                                                <f:param name="productType" value="#{product.productType}" />
+                                                                <f:param name="subProductType" value="#{product.subProductType}" />
                                                             </h:link>
                                                         </h3>
                                                         <div class="product-price-wrapper mb--30">

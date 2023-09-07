@@ -583,7 +583,7 @@
 
 	videoPopup.magnificPopup({
 		type: 'iframe',
-        closeMarkup: '<button type="button" class="custom-close mfp-close"><i class="flaticon flaticon-cross mfp-close"></i></button type="button">'
+        closeMarkup: '<button type="button" class="custom-close mfp-close"><i class="fa fa-close"></i></button type="button">'
 	});
 
 

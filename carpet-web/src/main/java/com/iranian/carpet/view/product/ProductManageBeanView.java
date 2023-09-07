@@ -109,7 +109,7 @@ public class ProductManageBeanView  implements Serializable {
 
     public void onRowSelect(SelectEvent<ProductDto> event) {
         try {
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/carpet-web/admin/product/product.xhtml?productId=" + event.getObject().getId());
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/admin/product/product.xhtml?productId=" + event.getObject().getId());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
