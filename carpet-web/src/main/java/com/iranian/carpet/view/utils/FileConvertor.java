@@ -23,7 +23,8 @@ public class FileConvertor {
 		try {
 		UUID uuid=UUID.randomUUID();
 		byte[] blog = txtFile.getBytes(StandardCharsets.UTF_8);
-		File out1 = new File("C:\\Users\\ali\\Documents\\wildfly-29.0.0.Beta1\\wildfly-29.0.0.Beta1\\fimg\\" + uuid+ ".txt");
+		File out1 = new File("/home/wildfly/wildfly-29.0.0.Beta1/wildfly-29.0.0.Beta1/fimg" + uuid+ ".txt");
+		//File out1 = new File("C:\\Users\\ali\\Documents\\wildfly-29.0.0.Beta1\\wildfly-29.0.0.Beta1\\fimg\\" + uuid+ ".txt");
 		InputStream in1 = new ByteArrayInputStream(blog);
 		OutputStream outputStream = new FileOutputStream(out1);
 		outputStream.write(blog);
@@ -38,7 +39,8 @@ public class FileConvertor {
 	
 	public static String convertTextFileToText(String textName) throws Exception{
         try {
-		File file = new File("C:\\Users\\ali\\Documents\\wildfly-29.0.0.Beta1\\wildfly-29.0.0.Beta1\\fimg\\" + textName + ".txt");
+		File file = new File("/home/wildfly/wildfly-29.0.0.Beta1/wildfly-29.0.0.Beta1/fimg" + textName + ".txt");
+		//File file = new File("C:\\Users\\ali\\Documents\\wildfly-29.0.0.Beta1\\wildfly-29.0.0.Beta1\\fimg\\" + textName + ".txt");
 		byte[] bytesArray = new byte[(int) file.length()];
 		FileInputStream fis = new FileInputStream(file);
 		fis.read(bytesArray);
@@ -54,7 +56,8 @@ public class FileConvertor {
 		try {
 			UUID uuid = UUID.randomUUID();
 			byte[] image1Byte = IOUtils.toByteArray(uploadedFile.getInputStream());
-			File out3 = new File("C:\\Users\\ali\\Documents\\wildfly-29.0.0.Beta1\\wildfly-29.0.0.Beta1\\fimg\\" + uuid + ".jpg");
+			//File out3 = new File("C:\\Users\\ali\\Documents\\wildfly-29.0.0.Beta1\\wildfly-29.0.0.Beta1\\fimg\\" + uuid + ".jpg");
+			File out3 = new File("/home/wildfly/wildfly-29.0.0.Beta1/wildfly-29.0.0.Beta1/fimg/" + uuid + ".jpg");
 			InputStream in = new ByteArrayInputStream(image1Byte);
 			BufferedImage img3 = ImageIO.read(in);
 			//BufferedImage scaledImg = Scalr.resize(img3, 800, 1000);
