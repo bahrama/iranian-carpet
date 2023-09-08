@@ -83,7 +83,10 @@
 	</url-mapping>
 
 
-
+	<url-mapping id="view6">
+		<pattern value="/search/#{searchWord}/#{page}" />
+		<view-id value="/pages/search.xhtml" />
+	</url-mapping>
 
 
 </pretty-config>

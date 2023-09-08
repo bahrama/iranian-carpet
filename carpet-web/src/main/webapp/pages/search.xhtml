@@ -1,11 +1,141 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
-</html>
+<ui:composition template="../WEB-INF/pages/main-temp.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam name="page" />
+            <f:viewParam name="searchWord" />
+        </f:metadata>
+    </ui:define>
+    <ui:define name="main-head">
+        <style>
+            .justify-blog {
+                text-align: justify;
+            }
+        </style>
+    </ui:define>
+    <ui:define name="main-body">
+
+        <!-- Breadcrumb area Start -->
+        <div class="breadcrumb-area bg-color" data-bg-color="#f6f6f6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
+                            <ul class="breadcrumb">
+                                <li>
+                                    <h:link outcome="/pages/home.xhtml" styleClass="mainmenu__link">
+                                        Home
+                                    </h:link>
+                                </li>
+                                <li class="current"><span>Search Result</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb area End -->
+
+        <!-- Main Content Wrapper Start -->
+        <div class="main-content-wrapper">
+            <div class="page-content-inner ptb--80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <ui:repeat value="#{searchManageBeanView.search(searchWord,12,page)}" var="srch">
+                                <article class="blog blog-style-2 blog-list mb--50">
+                                    <div class="blog-media">
+                                        <figure class="image">
+                                            <a href="blog-details-image.html">
+                                                <h:link rendered="#{srch.type eq 'blog'}" outcome="/pages/blog-detail.xhtml">
+                                                    <h:graphicImage style="max-width:100%; height:300px!important"
+                                                                    rendered="#{srch.pic1 ne null}"
+                                                                    value="http://localhost:8082/Images/#{srch.pic1}.jpg"/>
+                                                    <f:param name="id" value="#{srch.code}" />
+                                                    <f:param name="name" value="#{blogListPageManageBeanView.replaceSpaceWithDash(srch.name)}" />
+                                                    <f:param name="blogType" value="#{srch.blogType}" />
+                                                </h:link>
+                                                <h:link rendered="#{srch.type eq 'product'}" outcome="/pages/product-detail.xhtml">
+                                                    <h:graphicImage style="max-width:100%; height:300px!important"
+                                                                    rendered="#{srch.pic1 ne null}"
+                                                                    value="http://localhost:8082/Images/#{srch.pic1}.jpg"/>
+                                                    <f:param name="code" value="#{srch.code}" />
+                                                    <f:param name="name" value="#{blogListPageManageBeanView.replaceSpaceWithDash(srch.name)}" />
+                                                    <f:param name="productType" value="#{srch.productType}" />
+                                                    <f:param name="subProductType" value="#{srch.subProductType}" />
+                                                </h:link>
+                                            </a>
+                                        </figure>
+                                    </div>
+                                    <div class="blog-info">
+                                        <h2 class="blog-title">
+                                            <h:link rendered="#{srch.type eq 'blog'}" outcome="/pages/blog-detail.xhtml">
+                                                #{srch.name}
+                                                <f:param name="id" value="#{srch.code}" />
+                                                <f:param name="name" value="#{blogListPageManageBeanView.replaceSpaceWithDash(srch.name)}" />
+                                                <f:param name="blogType" value="#{srch.blogType}" />
+                                            </h:link>
+                                            <h:link rendered="#{srch.type eq 'product'}" outcome="/pages/product-detail.xhtml">
+                                                #{srch.name}
+                                                <f:param name="code" value="#{srch.code}" />
+                                                <f:param name="name" value="#{blogListPageManageBeanView.replaceSpaceWithDash(srch.name)}" />
+                                                <f:param name="productType" value="#{srch.productType}" />
+                                                <f:param name="subProductType" value="#{srch.subProductType}" />
+                                            </h:link>
+                                        </h2>
+                                        <div class="blog-content mb--25 justify-blog">
+                                            <p>#{srch.name}</p>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <div class="blog-meta--right">
+                                                <h:link rendered="#{srch.type eq 'blog'}" outcome="/pages/blog-detail.xhtml" styleClass="btn btn-no-bg btn-color-dark">
+                                                    Read More <i class="fa fa-angle-double-right"></i>
+                                                    <f:param name="id" value="#{srch.code}" />
+                                                    <f:param name="name" value="#{blogListPageManageBeanView.replaceSpaceWithDash(srch.name)}" />
+                                                    <f:param name="blogType" value="#{srch.blogType}" />
+                                                </h:link>
+                                                <h:link rendered="#{srch.type eq 'product'}" outcome="/pages/product-detail.xhtml" styleClass="btn btn-no-bg btn-color-dark">
+                                                    Read More <i class="fa fa-angle-double-right"></i>
+                                                    <f:param name="code" value="#{srch.code}" />
+                                                    <f:param name="name" value="#{blogListPageManageBeanView.replaceSpaceWithDash(srch.name)}" />
+                                                    <f:param name="productType" value="#{srch.productType}" />
+                                                    <f:param name="subProductType" value="#{srch.subProductType}" />
+                                                </h:link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </ui:repeat>
+         <!--                   <nav class="pagination-wrap">
+                                <ul class="pagination">
+                                    <li><a href="#" class="prev page-number"><i class="fa fa-angle-double-left"></i></a></li>
+                                    <ui:repeat value="#{blogListPageManageBeanView.findPaginationNumbers(blogType,12)}" var="pg">
+                                        <h:panelGroup rendered="#{(pg eq page)}">
+                                            <h:link outcome="/pages/blog-list.xhtml">
+                                                <li><span class="current page-number">#{pg}</span></li>
+                                                <f:param name="page" value="#{pg}" />
+                                                <f:param disable="#{blogType eq null}" name="blogType" value="#{blogType}" />
+                                            </h:link>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{(pg ne page)}">
+                                            <h:link outcome="/pages/blog-list.xhtml">
+                                                <li><span class="page-number">#{pg}</span></li>
+                                                <f:param name="page" value="#{pg}" />
+                                                <f:param disable="#{blogType eq null}" name="blogType" value="#{blogType}" />
+                                            </h:link>
+                                        </h:panelGroup>
+                                    </ui:repeat>
+                                    <li><a href="#" class="next page-number"><i class="fa fa-angle-double-right"></i></a></li>
+                                </ul>
+                            </nav>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Wrapper End -->
+    </ui:define>
+</ui:composition>

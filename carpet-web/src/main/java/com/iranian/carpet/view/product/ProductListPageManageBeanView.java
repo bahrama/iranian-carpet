@@ -96,7 +96,7 @@ public class ProductListPageManageBeanView implements Serializable {
     public void changeProdDrop(AjaxBehaviorEvent event) {
          System.out.println(productType);
         try {
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/carpet-web/pages/product-list.xhtml?productType=" + productType + "&page=1");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/pages/product-list.xhtml?productType=" + productType + "&page=1");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
