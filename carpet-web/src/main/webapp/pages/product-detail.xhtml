@@ -94,7 +94,7 @@
                                                 <figure class="product-gallery__image zoom" style="height: 400px;">
                                                     <h:graphicImage style="max-width:100%;"
                                                                     rendered="#{productDetailPageManageBeanView.productDto.pic1 ne null}"
-                                                                    value="http://localhost:8082/Images/#{productDetailPageManageBeanView.productDto.pic1}.jpg"/>
+                                                                    value="/Images/#{productDetailPageManageBeanView.productDto.pic1}.jpg"/>
                                                     <div class="product-gallery__actions">
                                                         <button class="action-btn btn-zoom-popup"><i class="fa fa-eye"></i></button>
                                                         <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM" class="action-btn video-popup"><i class="fa fa-play"></i></a>
@@ -103,7 +103,7 @@
                                                 <figure class="product-gallery__image zoom">
                                                     <h:graphicImage style="max-width:100%;"
                                                                     rendered="#{productDetailPageManageBeanView.productDto.pic2 ne null}"
-                                                                    value="http://localhost:8082/Images/#{productDetailPageManageBeanView.productDto.pic2}.jpg"/>
+                                                                    value="/Images/#{productDetailPageManageBeanView.productDto.pic2}.jpg"/>
                                                     <div class="product-gallery__actions">
                                                         <button class="action-btn btn-zoom-popup"><i class="fa fa-eye"></i></button>
                                                         <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM" class="action-btn video-popup"><i class="fa fa-play"></i></a>
@@ -112,7 +112,7 @@
                                                 <figure class="product-gallery__image zoom">
                                                     <h:graphicImage style="max-width:100%;"
                                                                     rendered="#{productDetailPageManageBeanView.productDto.pic3 ne null}"
-                                                                    value="http://localhost:8082/Images/#{productDetailPageManageBeanView.productDto.pic3}.jpg"/>
+                                                                    value="/Images/#{productDetailPageManageBeanView.productDto.pic3}.jpg"/>
                                                     <div class="product-gallery__actions">
                                                         <button class="action-btn btn-zoom-popup"><i class="fa fa-eye"></i></button>
                                                         <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM" class="action-btn video-popup"><i class="fa fa-play"></i></a>
@@ -121,7 +121,7 @@
                                                 <figure class="product-gallery__image zoom">
                                                     <h:graphicImage style="max-width:100%;"
                                                                     rendered="#{productDetailPageManageBeanView.productDto.pic4 ne null}"
-                                                                    value="http://localhost:8082/Images/#{productDetailPageManageBeanView.productDto.pic4}.jpg"/>
+                                                                    value="/Images/#{productDetailPageManageBeanView.productDto.pic4}.jpg"/>
                                                     <div class="product-gallery__actions">
                                                         <button class="action-btn btn-zoom-popup"><i class="fa fa-eye"></i></button>
                                                         <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM" class="action-btn video-popup"><i class="fa fa-play"></i></a>
@@ -172,22 +172,22 @@
                                             <figure class="product-gallery__nav-image--single">
                                                 <h:graphicImage style="max-width:100%;"
                                                                 rendered="#{productDetailPageManageBeanView.productDto.pic1 ne null}"
-                                                                value="http://localhost:8082/Images/#{productDetailPageManageBeanView.productDto.pic1}.jpg"/>
+                                                                value="/Images/#{productDetailPageManageBeanView.productDto.pic1}.jpg"/>
                                             </figure>
                                             <figure class="product-gallery__nav-image--single">
                                                 <h:graphicImage style="max-width:100%;"
                                                                 rendered="#{productDetailPageManageBeanView.productDto.pic2 ne null}"
-                                                                value="http://localhost:8082/Images/#{productDetailPageManageBeanView.productDto.pic2}.jpg"/>
+                                                                value="/Images/#{productDetailPageManageBeanView.productDto.pic2}.jpg"/>
                                             </figure>
                                             <figure class="product-gallery__nav-image--single">
                                                 <h:graphicImage style="max-width:100%;"
                                                                 rendered="#{productDetailPageManageBeanView.productDto.pic3 ne null}"
-                                                                value="http://localhost:8082/Images/#{productDetailPageManageBeanView.productDto.pic3}.jpg"/>
+                                                                value="/Images/#{productDetailPageManageBeanView.productDto.pic3}.jpg"/>
                                             </figure>
                                             <figure class="product-gallery__nav-image--single">
                                                 <h:graphicImage style="max-width:100%;"
                                                                 rendered="#{productDetailPageManageBeanView.productDto.pic4 ne null}"
-                                                                value="http://localhost:8082/Images/#{productDetailPageManageBeanView.productDto.pic4}.jpg"/>
+                                                                value="/Images/#{productDetailPageManageBeanView.productDto.pic4}.jpg"/>
                                             </figure>
                                         </div>
                                     </div>
@@ -286,7 +286,7 @@
                                                     <h:link outcome="/pages/product-detail.xhtml">
                                                         <h:graphicImage
                                                                 rendered="#{product.pic1 ne null}"
-                                                                value="http://localhost:8082/Images/#{product.pic1}.jpg"/>
+                                                                value="/Images/#{product.pic1}.jpg"/>
                                                         <f:param name="code" value="#{product.code}" />
                                                     </h:link>
                                                     <span class="product-badge">New</span>

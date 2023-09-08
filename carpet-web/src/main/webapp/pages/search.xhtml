@@ -53,7 +53,7 @@
                                                 <h:link rendered="#{srch.type eq 'blog'}" outcome="/pages/blog-detail.xhtml">
                                                     <h:graphicImage style="max-width:100%; height:300px!important"
                                                                     rendered="#{srch.pic1 ne null}"
-                                                                    value="http://localhost:8082/Images/#{srch.pic1}.jpg"/>
+                                                                    value="/Images/#{srch.pic1}.jpg"/>
                                                     <f:param name="id" value="#{srch.code}" />
                                                     <f:param name="name" value="#{blogListPageManageBeanView.replaceSpaceWithDash(srch.name)}" />
                                                     <f:param name="blogType" value="#{srch.blogType}" />
@@ -61,7 +61,7 @@
                                                 <h:link rendered="#{srch.type eq 'product'}" outcome="/pages/product-detail.xhtml">
                                                     <h:graphicImage style="max-width:100%; height:300px!important"
                                                                     rendered="#{srch.pic1 ne null}"
-                                                                    value="http://localhost:8082/Images/#{srch.pic1}.jpg"/>
+                                                                    value="/Images/#{srch.pic1}.jpg"/>
                                                     <f:param name="code" value="#{srch.code}" />
                                                     <f:param name="name" value="#{blogListPageManageBeanView.replaceSpaceWithDash(srch.name)}" />
                                                     <f:param name="productType" value="#{srch.productType}" />

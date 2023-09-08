@@ -45,7 +45,7 @@
                                     <figure class="banner-image">
                                         <h:graphicImage
                                                         rendered="#{comm.pic ne null}"
-                                                        value="http://localhost:8082/Images/#{comm.pic}.jpg"/>
+                                                        value="/Images/#{comm.pic}.jpg"/>
                                     </figure>
                                     <div class="banner-info">
                                         <div class="banner-info--inner pl--50 pt--150">
@@ -99,7 +99,7 @@
                                                             <h:link outcome="/pages/product-detail.xhtml">
                                                                 <h:graphicImage
                                                                         rendered="#{product.pic1 ne null}"
-                                                                        value="http://localhost:8082/Images/#{product.pic1}.jpg"/>
+                                                                        value="/Images/#{product.pic1}.jpg"/>
                                                                 <f:param name="code" value="#{product.code}" />
                                                             </h:link>
                                                             <span class="product-badge">New</span>

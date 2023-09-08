@@ -54,7 +54,7 @@
                                             <h:link outcome="/pages/blog-detail.xhtml">
                                                 <h:graphicImage style="max-width:100%; height:300px!important" alt="#{blg.altPic1}"
                                                                 rendered="#{blg.pic1 ne null}"
-                                                                value="http://localhost:8082/Images/#{blg.pic1}.jpg"/>
+                                                                value="/Images/#{blg.pic1}.jpg"/>
                                                 <f:param name="id" value="#{blg.id}" />
                                                 <f:param name="name" value="#{blogListPageManageBeanView.replaceSpaceWithDash(blg.name)}" />
                                                 <f:param name="blogType" value="#{blg.blogType}" />
