@@ -96,7 +96,7 @@
                     <span class="ui-float-label">
                         <h:graphicImage style="max-width:100%; height:300px!important"
                                         rendered="#{homeManageBeanView.homeDto.pic ne null}"
-                                        value="http://localhost:8082/Images/#{homeManageBeanView.homeDto.pic}.jpg"/>
+                                        value="/Images/#{homeManageBeanView.homeDto.pic}.jpg"/>
                         <p:fileUpload value="#{homeManageBeanView.pic}" mode="simple"
                                       skinSimple="true"
                                       validateContentType="true" accept=".jpg,.jpeg"

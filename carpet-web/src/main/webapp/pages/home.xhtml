@@ -102,6 +102,9 @@
                                                                         rendered="#{product.pic1 ne null}"
                                                                         value="/Images/#{product.pic1}.jpg"/>
                                                                 <f:param name="code" value="#{product.code}" />
+                                                                <f:param name="name" value="#{productListPageManageBeanView.convertSpaceToDash(product.name)}" />
+                                                                <f:param name="productType" value="#{product.productType}" />
+                                                                <f:param name="subProductType" value="#{product.subProductType}" />
                                                             </h:link>
                                                             <span class="product-badge">New</span>
                                                         </figure>

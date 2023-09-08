@@ -189,7 +189,7 @@
                     <span class="ui-float-label">
                         <h:graphicImage style="max-width:100%; height:300px!important"
                                         rendered="#{blogManageBeanView.blogDto.pic1 ne null}"
-                                        value="http://localhost:8082/Images/#{blogManageBeanView.blogDto.pic1}.jpg"/>
+                                        value="/Images/#{blogManageBeanView.blogDto.pic1}.jpg"/>
                         <p:fileUpload value="#{blogManageBeanView.pic1}" mode="simple"
                                       skinSimple="true"
                                       validateContentType="true" accept=".jpg,.jpeg"
