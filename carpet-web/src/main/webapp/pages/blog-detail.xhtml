@@ -34,6 +34,7 @@
                 width: 100%!important;
             }
         </style>
+        <meta name="Description" content="#{blogDetailPageManageBeanView.blogDto.metaDescription}"/>
     </ui:define>
     <ui:define name="main-body">
 
@@ -47,6 +48,12 @@
                                 <li>
                                     <h:link outcome="/pages/home.xhtml" styleClass="mainmenu__link">
                                         Home
+                                    </h:link>
+                                </li>
+                                <li>
+                                    <h:link outcome="/pages/blog-list.xhtml" styleClass="mainmenu__link">
+                                        All Blogs
+                                        <f:param name="page" value="1" />
                                     </h:link>
                                 </li>
                                 <li>

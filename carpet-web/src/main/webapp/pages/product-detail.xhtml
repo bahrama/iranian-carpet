@@ -36,6 +36,7 @@
                 width: 100%!important;
             }
         </style>
+        <meta name="Description" content="#{productDetailPageManageBeanView.productDto.metaDescription}"/>
     </ui:define>
     <ui:define name="main-body">
         <!-- Breadcrumb area Start -->
@@ -48,6 +49,12 @@
                                 <li>
                                     <h:link outcome="/pages/home.xhtml" styleClass="mainmenu__link">
                                         Home
+                                    </h:link>
+                                </li>
+                                <li>
+                                    <h:link outcome="/pages/product-list.xhtml" styleClass="mainmenu__link">
+                                        All Products
+                                        <f:param name="page" value="1" />
                                     </h:link>
                                 </li>
                                 <li>
@@ -92,7 +99,7 @@
                                                 "asNavFor": ".nav-slider"
                                             }'>
                                                 <figure class="product-gallery__image zoom" style="height: 400px;">
-                                                    <h:graphicImage style="max-width:100%;"
+                                                    <h:graphicImage style="max-width:100%;" alt="#{productDetailPageManageBeanView.productDto.altPic1}"
                                                                     rendered="#{productDetailPageManageBeanView.productDto.pic1 ne null}"
                                                                     value="/Images/#{productDetailPageManageBeanView.productDto.pic1}.jpg"/>
                                                     <div class="product-gallery__actions">
@@ -101,7 +108,7 @@
                                                     </div>
                                                 </figure>
                                                 <figure class="product-gallery__image zoom">
-                                                    <h:graphicImage style="max-width:100%;"
+                                                    <h:graphicImage style="max-width:100%;" alt="#{productDetailPageManageBeanView.productDto.altPic2}"
                                                                     rendered="#{productDetailPageManageBeanView.productDto.pic2 ne null}"
                                                                     value="/Images/#{productDetailPageManageBeanView.productDto.pic2}.jpg"/>
                                                     <div class="product-gallery__actions">
@@ -110,7 +117,7 @@
                                                     </div>
                                                 </figure>
                                                 <figure class="product-gallery__image zoom">
-                                                    <h:graphicImage style="max-width:100%;"
+                                                    <h:graphicImage style="max-width:100%;" alt="#{productDetailPageManageBeanView.productDto.altPic3}"
                                                                     rendered="#{productDetailPageManageBeanView.productDto.pic3 ne null}"
                                                                     value="/Images/#{productDetailPageManageBeanView.productDto.pic3}.jpg"/>
                                                     <div class="product-gallery__actions">
@@ -119,7 +126,7 @@
                                                     </div>
                                                 </figure>
                                                 <figure class="product-gallery__image zoom">
-                                                    <h:graphicImage style="max-width:100%;"
+                                                    <h:graphicImage style="max-width:100%;" alt="#{productDetailPageManageBeanView.productDto.altPic4}"
                                                                     rendered="#{productDetailPageManageBeanView.productDto.pic4 ne null}"
                                                                     value="/Images/#{productDetailPageManageBeanView.productDto.pic4}.jpg"/>
                                                     <div class="product-gallery__actions">
@@ -170,22 +177,22 @@
                                             }
                                         ]'>
                                             <figure class="product-gallery__nav-image--single">
-                                                <h:graphicImage style="max-width:100%;"
+                                                <h:graphicImage style="max-width:100%;" alt="#{productDetailPageManageBeanView.productDto.altPic1}"
                                                                 rendered="#{productDetailPageManageBeanView.productDto.pic1 ne null}"
                                                                 value="/Images/#{productDetailPageManageBeanView.productDto.pic1}.jpg"/>
                                             </figure>
                                             <figure class="product-gallery__nav-image--single">
-                                                <h:graphicImage style="max-width:100%;"
+                                                <h:graphicImage style="max-width:100%;" alt="#{productDetailPageManageBeanView.productDto.altPic2}"
                                                                 rendered="#{productDetailPageManageBeanView.productDto.pic2 ne null}"
                                                                 value="/Images/#{productDetailPageManageBeanView.productDto.pic2}.jpg"/>
                                             </figure>
                                             <figure class="product-gallery__nav-image--single">
-                                                <h:graphicImage style="max-width:100%;"
+                                                <h:graphicImage style="max-width:100%;" alt="#{productDetailPageManageBeanView.productDto.altPic3}"
                                                                 rendered="#{productDetailPageManageBeanView.productDto.pic3 ne null}"
                                                                 value="/Images/#{productDetailPageManageBeanView.productDto.pic3}.jpg"/>
                                             </figure>
                                             <figure class="product-gallery__nav-image--single">
-                                                <h:graphicImage style="max-width:100%;"
+                                                <h:graphicImage style="max-width:100%;" alt="#{productDetailPageManageBeanView.productDto.altPic4}"
                                                                 rendered="#{productDetailPageManageBeanView.productDto.pic4 ne null}"
                                                                 value="/Images/#{productDetailPageManageBeanView.productDto.pic4}.jpg"/>
                                             </figure>
@@ -284,7 +291,7 @@
                                             <div class="product-inner">
                                                 <figure class="product-image">
                                                     <h:link outcome="/pages/product-detail.xhtml">
-                                                        <h:graphicImage
+                                                        <h:graphicImage alt="#{product.altPic1}"
                                                                 rendered="#{product.pic1 ne null}"
                                                                 value="/Images/#{product.pic1}.jpg"/>
                                                         <f:param name="code" value="#{product.code}" />

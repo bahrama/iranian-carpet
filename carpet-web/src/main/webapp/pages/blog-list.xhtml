@@ -11,11 +11,13 @@
         </f:metadata>
     </ui:define>
     <ui:define name="main-head">
+        <title> Iranian #{blogType} Blogs</title>
         <style>
             .justify-blog {
                 text-align: justify;
             }
         </style>
+        <meta name="Description" content="Iranian #{blogType} Blogs"/>
     </ui:define>
     <ui:define name="main-body">
 
@@ -31,7 +33,29 @@
                                         Home
                                     </h:link>
                                 </li>
-                                <li class="current"><span>#{blogType} Blog List</span></li>
+                                <h:panelGroup rendered="#{blogType eq null}">
+                                    <li>
+                                        <h:link outcome="/pages/blog-list.xhtml" styleClass="mainmenu__link">
+                                            All Blogs
+                                            <f:param name="page" value="1" />
+                                        </h:link>
+                                    </li>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{blogType ne null}">
+                                    <li>
+                                        <h:link outcome="/pages/blog-list.xhtml" styleClass="mainmenu__link">
+                                            All Blogs
+                                            <f:param name="page" value="1" />
+                                        </h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/pages/blog-list.xhtml" styleClass="mainmenu__link">
+                                            #{blogType}
+                                            <f:param name="blogType" value="#{blogType}" />
+                                            <f:param name="page" value="1" />
+                                        </h:link>
+                                    </li>
+                                </h:panelGroup>
                             </ul>
                         </div>
                     </div>

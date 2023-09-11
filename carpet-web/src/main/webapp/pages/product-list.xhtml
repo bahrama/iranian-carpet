@@ -10,7 +10,10 @@
             <f:viewParam name="page" />
         </f:metadata>
     </ui:define>
-    <ui:define name="main-head"></ui:define>
+    <ui:define name="main-head">
+        <title> Iranian #{productType} #{subProductType} </title>
+        <meta name="Description" content=" Iranian #{productType} #{subProductType} "/>
+    </ui:define>
     <ui:define name="main-body">
         <div class="breadcrumb-area bg-color" data-bg-color="#f6f6f6">
             <div class="container">
@@ -23,9 +26,39 @@
                                         Home
                                     </h:link>
                                 </li>
+                                <h:panelGroup rendered="#{subProductType eq null and productType eq null}">
+                                    <li>
+                                        <h:link outcome="/pages/product-list.xhtml" styleClass="mainmenu__link">
+                                            All Products
+                                            <f:param name="page" value="1" />
+                                        </h:link>
+                                    </li>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{productType ne null}">
+                                    <li>
+                                        <h:link outcome="/pages/product-list.xhtml" styleClass="mainmenu__link">
+                                            All Products
+                                            <f:param name="page" value="1" />
+                                        </h:link>
+                                    </li>
                                 <li>
-                                    Product List
+                                    <h:link outcome="/pages/product-list.xhtml" styleClass="mainmenu__link">
+                                        #{productType}
+                                        <f:param name="productType" value="#{productType}" />
+                                        <f:param name="page" value="1" />
+                                    </h:link>
                                 </li>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{subProductType ne null and productType ne null}">
+                                    <li>
+                                        <h:link outcome="/pages/product-list.xhtml" styleClass="mainmenu__link">
+                                            #{subProductType}
+                                            <f:param name="productType" value="#{productType}" />
+                                            <f:param name="subProductType" value="#{subProductType}" />
+                                            <f:param name="page" value="1" />
+                                        </h:link>
+                                    </li>
+                                </h:panelGroup>
                             </ul>
                         </div>
                     </div>
@@ -37,39 +70,6 @@
         <!-- Main Content Wrapper Start -->
         <div  class="main-content-wrapper">
             <div class="shop-page-wrapper shop-fullwidth ptb--80">
-                <div class="container">
-                    <div class="row mb--50">
-                        <div class="col-12">
-                            <div class="shop-toolbar">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-6 mb-md--50 mb-xs--10">
-
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="shop-toolbar__right d-flex justify-content-lg-end justify-content-start flex-sm-row flex-column">
-                                            <div class="product-categories mb-xs--15 mr--50 mr-xs--0">
-
-                                                <h:selectOneMenu value="#{productListPageManageBeanView.productType}" styleClass="nice-select" id="dropPro">
-                                                    <f:selectItem itemValue="CARPET" itemLabel="Carpet"/>
-                                                    <f:selectItem itemValue="CASHEW" itemLabel="Cashew"/>
-                                                    <f:selectItem itemValue="ENAMELS" itemLabel="Enamels"/>
-                                                    <f:ajax event="change" listener="#{productListPageManageBeanView.changeProdDrop}" execute="dropPro" />
-                                                </h:selectOneMenu>
-                                            </div>
-                                            <div class="product-ordering">
-                                                    <h:selectOneMenu styleClass="product-ordering__select nice-select">
-                                                    <f:selectItem itemValue="0" itemLabel="Default Sorting"/>
-                                                    <f:selectItem itemValue="4" itemLabel="Price, low to high"/>
-                                                    <f:selectItem itemValue="5" itemLabel="Price, high to low"/>
-                                                    </h:selectOneMenu>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="shop-products grid container-fluid">
                     <div class="row">
                         <div class="col-12">
@@ -82,7 +82,7 @@
                                                 <div class="product-inner">
                                                     <figure class="product-image">
                                                             <h:link outcome="/pages/product-detail.xhtml">
-                                                            <h:graphicImage style="max-width:100%; height:300px!important"
+                                                            <h:graphicImage style="max-width:100%; height:300px!important" alt="#{product.altPic1}"
                                                                             rendered="#{product.pic1 ne null}"
                                                                             value="/Images/#{product.pic1}.jpg"/>
                                                             <f:param name="code" value="#{product.code}" />

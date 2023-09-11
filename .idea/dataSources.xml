@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://192.168.43.101:5432/carpet</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="carpet@49.13.85.91" uuid="51dad5c5-c698-45c7-80bd-7d6661b20b98">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://49.13.85.91:5432/carpet</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

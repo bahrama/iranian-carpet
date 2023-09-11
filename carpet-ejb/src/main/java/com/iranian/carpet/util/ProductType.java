@@ -9,7 +9,7 @@ import javax.swing.*;
 public enum ProductType {
     CARPET(1,"carpet")
     ,RUG(2,"rug")
-    ,CASHEW(3,"cashew")
+    ,TERMEH(3,"TERMEH")
     ,ENAMELS(4,"enamels");
 
     private int prefix;

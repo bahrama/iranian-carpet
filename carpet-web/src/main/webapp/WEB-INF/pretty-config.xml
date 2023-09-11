@@ -5,6 +5,11 @@
                       http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
 
 	<url-mapping id="view4">
+		<pattern value="/home" />
+		<view-id value="/pages/home.xhtml" />
+	</url-mapping>
+
+	<url-mapping id="view4">
 		<pattern value="/products" />
 		<view-id value="/pages/product-list.xhtml?page=1" />
 	</url-mapping>

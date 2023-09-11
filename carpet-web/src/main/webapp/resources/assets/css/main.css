@@ -3983,7 +3983,6 @@ a, a:hover, a:focus, a:active, button, button:focus, input, select, textarea, .s
   font-weight: 500;
   line-height: 30px; }
   .variation-form .reset_variations:before {
-    background: url(../img/icons/cross.png) no-repeat scroll right center;
     right: 0;
     top: 7px;
     width: 10px;
@@ -5089,7 +5088,6 @@ a, a:hover, a:focus, a:active, button, button:focus, input, select, textarea, .s
   letter-spacing: 5px;
   font-size: 14px;
   width: 90px;
-  font-family: 'fontAwesome';
   direction: ltr;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -5572,7 +5570,6 @@ a, button, .user-info-menu, .banner-box .banner-info, .banner-box .banner-hover-
 
 .nice-select:after {
   position: absolute;
-  font-family: fontAwesome;
   line-height: 1; }
 
 .action-btn, .product-size-swatch-btn, .product-color-swatch-btn {
