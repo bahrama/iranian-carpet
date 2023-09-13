@@ -504,5 +504,13 @@
 </f:view>
     <h:outputScript library="assets" name="js/vendor.js" />
     <h:outputScript library="assets" name="js/main.js" />
+    <h:outputScript>
+        function triggerExample() {
+            const element = document.querySelector('#pageLink');
+            element.select();
+            element.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+        }
+    </h:outputScript>
 </h:body>
 </html>
