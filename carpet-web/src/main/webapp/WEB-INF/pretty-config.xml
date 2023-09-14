@@ -93,15 +93,7 @@
 		<view-id value="/pages/search.xhtml" />
 	</url-mapping>
 
-<!--	<url-mapping id="view6">
-		<pattern value="/vendor.css" />
-		<view-id value="/jakarta.faces.resource/css/vendor.css.xhtml?ln=assets" />
-	</url-mapping>
 
-	<url-mapping id="view6">
-		<pattern value="/main.css" />
-		<view-id value="/jakarta.faces.resource/css/main.css.xhtml?ln=assets" />
-	</url-mapping>
 
 	<url-mapping id="view6">
 		<pattern value="/main.js" />
@@ -111,5 +103,5 @@
 	<url-mapping id="view6">
 		<pattern value="/vendor.js" />
 		<view-id value="/jakarta.faces.resource/js/vendor.js.xhtml?ln=assets" />
-	</url-mapping>-->
+	</url-mapping>
 </pretty-config>
